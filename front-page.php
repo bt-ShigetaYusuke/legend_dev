@@ -29,9 +29,9 @@
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_blog_title.png" alt="キャスト ブログ">
   </h2>
   <?php if (have_posts()): ?>
-    <?php while (have_posts()):
-      the_post(); ?>
-      <ul class="cast-blog-list">
+    <ul class="cast-blog-list">
+      <?php while (have_posts()):
+        the_post(); ?>
         <li class="cast-blog-item">
           <div class="cast-blog-item-img">
             <?php the_post_thumbnail(); ?>
@@ -50,8 +50,8 @@
             この投稿を読む
           </a>
         </li>
-      </ul>
-    <?php endwhile; ?>
+      <?php endwhile; ?>
+    </ul>
   <?php else: ?>
     <div class="cast-blog-error">
       <p>お探しの記事は見つかりませんでした。</p>
