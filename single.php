@@ -1,3 +1,5 @@
+<?php get_header(); ?>
+
 <article class="post">
   <?php if (have_posts()): ?>
     <?php while (have_posts()):
@@ -26,3 +28,5 @@
     </div>
   <?php endif; ?>
 </article>
+
+<?php get_footer(); ?>
