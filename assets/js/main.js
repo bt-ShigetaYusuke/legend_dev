@@ -1,7 +1,7 @@
-var hamburger = document.getElementById("header-hamburger");
-var hamburger_close = document.getElementById("header-hamburger-close");
-var overlay = document.getElementById("header-overlay");
-var menu = document.getElementById("header-menu");
+const hamburger = document.getElementById("header-hamburger");
+const hamburger_close = document.getElementById("header-hamburger-close");
+const overlay = document.getElementById("header-overlay");
+const menu = document.getElementById("header-menu");
 
 function toggleMenu() {
   hamburger.classList.toggle("--open");
