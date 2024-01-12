@@ -18,3 +18,30 @@ function closeMenu() {
 hamburger.addEventListener("click", toggleMenu);
 overlay.addEventListener("click", closeMenu);
 hamburger_close.addEventListener("click", closeMenu);
+
+function swiper() {
+  var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    speed: 3000,
+    allowTouchMove: true,
+    slidesPerView: 'auto',
+    // slidesPerView: 3,
+    // centeredSlides: true,
+    spaceBetween: 0,
+    autoplay: {
+      delay: 0,
+      pauseOnMouseEnter: true,
+      disableOnInteraction: false,
+    },
+    // pagination: {
+    //   el: ".swiper-pagination",
+    //   clickable: true,
+    // },
+    // navigation: {
+    //   nextEl: ".swiper-button-next",
+    //   prevEl: ".swiper-button-prev",
+    // },
+  });
+}
+
+swiper();

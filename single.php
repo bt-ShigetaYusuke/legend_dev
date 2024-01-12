@@ -24,5 +24,5 @@
     <div class="error">
       <p>お探しの記事は見つかりませんでした。</p>
     </div>
-  <?php endif; ?>w
+  <?php endif; ?>
 </article>

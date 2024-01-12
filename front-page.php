@@ -13,8 +13,39 @@
 
 </section>
 
-<section id="cast" class="cast">
+<?php
+$args = array(
+  'post_type' => 'cast',
+  'posts_per_page' => 50,
+);
 
+$the_query = new WP_Query($args);
+?>
+
+<section id="cast" class="cast">
+  <h2 class="cast__title">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_title.png" alt="キャスト">
+  </h2>
+  <?php if ($the_query->have_posts()): ?>
+    <div class="swiper mySwiper">
+      <ul class="cast__list swiper-wrapper">
+        <?php while ($the_query->have_posts()):
+          $the_query->the_post(); ?>
+          <li class="cast__item swiper-slide">
+            <a href="<?php the_permalink(); ?>">
+              <div class="cast__item__img">
+                <?php the_post_thumbnail(); ?>
+              </div>
+              <div class="cast__name">
+                <?php the_terms(get_the_ID(), 'cast_name', '', ', ', ''); ?>
+              </div>
+            </a>
+          </li>
+        <?php endwhile; ?>
+      </ul>
+    </div>
+  <?php endif; ?>
+  <?php wp_reset_postdata(); ?>
 </section>
 
 <section id="fee-system" class="fee-system">

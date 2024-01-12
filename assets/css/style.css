@@ -25,7 +25,7 @@ body {
   line-height: 1.5;
 }
 
-a{
+a {
   display: block;
 }
 
@@ -35,9 +35,8 @@ img {
   vertical-align: middle;
 }
 
-
 /* common */
-.common__width{
+.common__width {
   width: 69rem;
   margin: 0 auto;
 }
@@ -114,6 +113,31 @@ img {
   left: 0;
 }
 
+/* #banner */
+
+/* #about */
+
+/* #cast */
+.swiper {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-slide {
+  transition-timing-function: linear;
+  display: block;
+  width: 35rem !important;
+  height: auto;
+  background: inherit;
+  text-align: center;
+}
+
+/* #fee-system */
+
+/* #access */
+
 /* #cast-blog */
 .cast__blog {
   margin: 4rem auto 0;
@@ -142,32 +166,32 @@ img {
   column-gap: 1.8rem;
 }
 
-.cast__blog__item__title{
+.cast__blog__item__title {
   color: #33bbff;
   font-weight: bold;
   font-size: 3rem;
 }
 
 .cast__blog__item__content,
-.cast__blog__item__author{
+.cast__blog__item__author {
   font-size: 2.4rem;
 }
 
-.cast__blog__item__content{
-  margin: .5rem 0 0;
+.cast__blog__item__content {
+  margin: 0.5rem 0 0;
 }
 
-.cast__blog__item__author{
-  margin: .7rem 0 0;
+.cast__blog__item__author {
+  margin: 0.7rem 0 0;
   text-align: right;
 }
 
-.cast__blog__error{
+.cast__blog__error {
   color: yello;
   font-size: 2rem;
 }
 
-.cast__blog__button{
+.cast__blog__button {
   width: 48rem;
   margin: -2rem auto 0;
 }
