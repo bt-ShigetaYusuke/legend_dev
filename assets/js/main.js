@@ -24,8 +24,8 @@ function swiper() {
     loop: true,
     speed: 3000,
     allowTouchMove: true,
-    slidesPerView: 'auto',
     // slidesPerView: 3,
+    slidesPerView: 'auto',
     // centeredSlides: true,
     spaceBetween: 0,
     autoplay: {

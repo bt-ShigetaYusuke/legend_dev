@@ -46,7 +46,7 @@ add_filter('wp_resource_hints', 'theme_resource_hints', 10, 2);
 // js読み込み
 function theme_enqueue_scripts()
 {
-  wp_enqueue_script('swiper-min', get_template_directory_uri() . '/assets/js/swiper.min.js');
-  wp_enqueue_script('theme-script', get_template_directory_uri() . '/assets/js/main.js');
+  wp_enqueue_script('swiper-min', get_template_directory_uri() . '/assets/js/swiper.min.js', array(), false, true);
+  wp_enqueue_script('theme-script', get_template_directory_uri() . '/assets/js/main.js', array(), false, true);
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
