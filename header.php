@@ -13,22 +13,22 @@
 
 <body>
   <header>
-    <div class="hamburger">
+    <div id="header-hamburger" class="header__hamburger">
       <span></span>
       <span></span>
       <span></span>
     </div>
-    <div class="overlay"></div>
-    <nav class="menu">
-      <div class="hamburger-close">
+    <div id="header-overlay" class="header__overlay"></div>
+    <nav id="header-menu" class="header__menu">
+      <div id="header-hamburger-close" class="header__hamburger__close">
         <span></span>
         <span></span>
         <span></span>
       </div>
-      <ul>
-        <li><a href="#">メニュー1</a></li>
-        <li><a href="#">メニュー2</a></li>
-        <li><a href="#">メニュー3</a></li>
+      <ul class="header__menu__list">
+        <li class="header__menu__item"><a href="#" class="header__menu__item__link">メニュー1</a></li>
+        <li class="header__menu__item"><a href="#" class="header__menu__item__link">メニュー2</a></li>
+        <li class="header__menu__item"><a href="#" class="header__menu__item__link">メニュー3</a></li>
       </ul>
     </nav>
   </header>

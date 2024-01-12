@@ -1,32 +1,56 @@
 @charset "UTF-8";
 
-html{
-  font-size: clamp(10px, 1.33333vw, 80px);
+html {
+  font-size: 1.33333vw;
+  max-width: 750px;
+  margin: 0 auto;
 }
 
-img{
+@media (min-width: 750px) {
+  html {
+    font-size: 65%;
+  }
+}
+
+body {
+  max-width: 750px;
+  margin: 0 auto;
+  background: #252525;
+  color: #fff;
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+a {
+  display: block;
+}
+
+img {
   width: 100%;
   height: auto;
   vertical-align: middle;
 }
 
-body{
-  max-width: 768px;
+/* common */
+.common__width {
+  width: 69rem;
   margin: 0 auto;
-  font-size: 1.6rem;
 }
 
-/* header */
-.hamburger,
-.hamburger-close {
+/* #header */
+.header__hamburger,
+.header__hamburger-close {
   cursor: pointer;
   position: relative;
   width: 30px;
   height: 22px;
 }
-
-.hamburger span,
-.hamburger-close span {
+.header__hamburger span,
+.header__hamburger-close span {
   position: absolute;
   left: 0;
   width: 100%;
@@ -34,34 +58,29 @@ body{
   background: #000;
   transition: all 0.3s;
 }
-
-.hamburger span:nth-child(1) {
+.header__hamburger span:nth-child(1) {
   top: 0;
 }
-
-.hamburger span:nth-child(2) {
+.header__hamburger span:nth-child(2) {
   top: 10px;
 }
-
-.hamburger span:nth-child(3) {
+.header__hamburger span:nth-child(3) {
   top: 20px;
 }
 
-.hamburger-close span:nth-child(1) {
+.header__hamburger-close span:nth-child(1) {
   top: 10px;
   transform: rotate(45deg);
 }
-
-.hamburger-close span:nth-child(2) {
+.header__hamburger-close span:nth-child(2) {
   opacity: 0;
 }
-
-.hamburger-close span:nth-child(3) {
+.header__hamburger-close span:nth-child(3) {
   top: 10px;
   transform: rotate(-45deg);
 }
 
-.overlay {
+.header__overlay {
   position: fixed;
   opacity: 0;
   pointer-events: none;
@@ -73,13 +92,12 @@ body{
   z-index: 999;
   transition: all 0.3s;
 }
-
-.overlay.active{
+.header__overlay.--active {
   opacity: 1;
   pointer-events: auto;
 }
 
-.menu {
+.header__menu {
   position: fixed;
   top: 0;
   left: -300px;
@@ -90,8 +108,90 @@ body{
   transition: left 0.3s;
   z-index: 1000;
 }
-
-.menu.open {
+.header__menu.--open {
   top: 46px;
   left: 0;
+}
+
+/* #banner */
+
+/* #about */
+
+/* #cast */
+.swiper {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-slide {
+  transition-timing-function: linear;
+  display: block;
+  width: 35rem !important;
+  height: auto;
+  background: inherit;
+  text-align: center;
+}
+
+/* #fee-system */
+
+/* #access */
+
+/* #cast-blog */
+.cast__blog {
+  margin: 4rem auto 0;
+}
+
+.cast__blog__title {
+}
+
+.cast__blog__list {
+  margin: 2rem auto 0;
+}
+
+.cast__blog__item {
+}
+.cast__blog__item:nth-child(n + 2) {
+}
+
+.cast__blog__item__link {
+  border-bottom: dotted 1px #fff;
+  padding: 1.9rem 0;
+}
+.cast__blog__item__link.grid__container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 15rem auto;
+  column-gap: 1.8rem;
+}
+
+.cast__blog__item__title {
+  color: #33bbff;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.cast__blog__item__content,
+.cast__blog__item__author {
+  font-size: 2.4rem;
+}
+
+.cast__blog__item__content {
+  margin: 0.5rem 0 0;
+}
+
+.cast__blog__item__author {
+  margin: 0.7rem 0 0;
+  text-align: right;
+}
+
+.cast__blog__error {
+  color: yello;
+  font-size: 2rem;
+}
+
+.cast__blog__button {
+  width: 48rem;
+  margin: -2rem auto 0;
 }
