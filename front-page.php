@@ -37,7 +37,7 @@ $the_query = new WP_Query($args);
                 <?php the_post_thumbnail(); ?>
               </div>
               <div class="cast__name">
-                <?php the_terms(get_the_ID(), 'cast_name', '', ', ', ''); ?>
+                <?php the_field('cast_name'); ?>
               </div>
             </a>
           </li>
