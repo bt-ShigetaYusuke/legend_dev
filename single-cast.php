@@ -47,4 +47,37 @@ for ($i = 1; $i <= 10; $i++) {
   <?php endwhile; ?>
 </article>
 
+<?php
+// 現在の投稿の投稿者のIDを取得
+$author_id = get_the_author_meta('ID');
+
+$post_id = get_the_ID();
+$post_author_id = get_post_field('post_author', $post_id);
+
+$args = array(
+  'post_type' => 'post',
+  'posts_per_page' => 5,
+  'order' => 'DESC',
+  'author' => $author_id,
+);
+$wp_query = new WP_Query($args);
+
+print('id' . $author_id);
+print('post-id' . $post_author_id);
+?>
+
+<article id="cast-blog" class="cast__blog">
+  <?php if ($wp_query->have_posts()): ?>
+    <?php while ($wp_query->have_posts()):
+      $wp_query->the_post(); ?>
+      <h2>
+        <?php echo get_the_title(); ?>
+      </h2>
+    <?php endwhile; ?>
+  <?php else: ?>
+
+  <?php endif; ?>
+  <?php wp_reset_postdata(); ?>
+</article>
+
 <?php get_footer(); ?>
