@@ -85,29 +85,8 @@ function create_post_type()
         'editor',
         'thumbnail',
         'revisions',
+        'author',
       ),
     )
   );
-}
-
-function assign_cast_id($post_id, $post, $update)
-{
-  // キャストタイプの投稿と新規投稿のみに適用
-  if ($post->post_type == 'cast' && !$update) {
-    // 最後のキャストIDを取得
-    $args = array(
-      'post_type' => 'cast',
-      'posts_per_page' => 1,
-      'orderby' => 'meta_value_num',
-      'meta_key' => 'cast_id',
-      'order' => 'DESC'
-    );
-    $last_cast = new WP_Query($args);
-
-    $last_id = ($last_cast->have_posts()) ? (int) get_post_meta($last_cast->posts[0]->ID, 'cast_id', true) : 0;
-
-    // IDを生成
-    $cast_id = $last_id + 1;
-    update_post_meta($post_id, 'cast_id', $cast_id);
-  }
 }

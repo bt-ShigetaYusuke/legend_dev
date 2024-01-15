@@ -51,9 +51,6 @@ for ($i = 1; $i <= 10; $i++) {
 // 現在の投稿の投稿者のIDを取得
 $author_id = get_the_author_meta('ID');
 
-$post_id = get_the_ID();
-$post_author_id = get_post_field('post_author', $post_id);
-
 $args = array(
   'post_type' => 'post',
   'posts_per_page' => 5,
@@ -61,9 +58,6 @@ $args = array(
   'author' => $author_id,
 );
 $wp_query = new WP_Query($args);
-
-print('id' . $author_id);
-print('post-id' . $post_author_id);
 ?>
 
 <article id="cast-blog" class="cast__blog">
