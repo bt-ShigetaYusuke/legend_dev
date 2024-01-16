@@ -52,6 +52,9 @@ function theme_enqueue_styles()
   if (is_post_type_archive('cast')) {
     $styles['archive-cast-style'] = get_template_directory_uri() . '/assets/css/archive-cast.css';
   }
+  if (is_page('recruit')) {
+    $styles['page-recruit-style'] = get_template_directory_uri() . '/assets/css/page-recruit.css';
+  }
 
   foreach ($styles as $id => $url) {
     wp_enqueue_style($id, $url);
@@ -89,4 +92,11 @@ function create_post_type()
       ),
     )
   );
+}
+
+// Contact Form 7で自動挿入されるPタグ、brタグを削除
+add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
+function wpcf7_autop_return_false()
+{
+  return false;
 }

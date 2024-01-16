@@ -56,6 +56,13 @@ $the_query = new WP_Query($args);
 
 </section>
 
+<?php // 文字数制限
+$title = get_the_title();
+$title = wp_trim_words(get_the_title(), 18, '…');
+$content = get_the_content('', false, '');
+$content = wp_strip_all_tags($content);
+?>
+
 <section id="cast-blog" class="cast__blog">
   <h2 class="cast__blog__title">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_blog_title.png" alt="キャスト ブログ">
@@ -72,12 +79,11 @@ $the_query = new WP_Query($args);
               </div>
             </div>
             <div class="grid__item">
-              <?php // the_modified_date(); ?>
               <h3 class="cast__blog__item__title">
-                <?php the_title(); ?>
+                <?= $title ?>
               </h3>
               <div class="cast__blog__item__content">
-                <?php the_content(); ?>
+                <?= $content ?>
               </div>
               <p class="cast__blog__item__author">
                 <?php the_author_meta('nickname'); ?>
