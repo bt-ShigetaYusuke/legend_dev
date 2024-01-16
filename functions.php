@@ -38,6 +38,7 @@ function theme_enqueue_styles()
 {
   $styles = array(
     'google-fonts' => 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400..700&display=swap',
+    'font-awesome' => get_template_directory_uri() . '/assets/css/all.min.css',
     'swiper-min' => get_template_directory_uri() . '/assets/css/swiper.min.css',
     'theme-reset' => get_template_directory_uri() . '/assets/css/reset.css',
     'common-style' => get_template_directory_uri() . '/assets/css/common.css',
@@ -51,6 +52,9 @@ function theme_enqueue_styles()
   }
   if (is_post_type_archive('cast')) {
     $styles['archive-cast-style'] = get_template_directory_uri() . '/assets/css/archive-cast.css';
+  }
+  if (is_page('recruit')) {
+    $styles['page-recruit-style'] = get_template_directory_uri() . '/assets/css/page-recruit.css';
   }
 
   foreach ($styles as $id => $url) {
@@ -69,7 +73,6 @@ add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
 
 // カスタム投稿タイプ
 add_action('init', 'create_post_type');
-
 function create_post_type()
 {
   register_post_type(
@@ -89,4 +92,11 @@ function create_post_type()
       ),
     )
   );
+}
+
+// Contact Form 7で自動挿入されるPタグ、brタグを削除
+add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
+function wpcf7_autop_return_false()
+{
+  return false;
 }

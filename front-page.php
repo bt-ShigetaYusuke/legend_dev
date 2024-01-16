@@ -1,16 +1,37 @@
 <?php get_header(); ?>
 
 
-<section id="first-view" class="first-view">
-  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="">
+<section id="first-view" class="firstview">
+  <div class="firstview__logo">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="BIKINI GIRLS BAR LEGEND">
+  </div>
+  <div class="firstview__img">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/firstview_img.png" alt="">
+  </div>
+  <div class="firstview__text">
+    <p class="firstview__text__01">東京都府中市府中町1-6-1 古沢ビルB1（府中駅 徒歩1分）</p>
+    <p class="firstview__text__02">open <span class="large">19:00</span> > close <span class="large">24:00</span></p>
+  </div>
 </section>
 
 <section id="banner" class="banner">
-
+  <div class="banner__img">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/banner_img.png" alt="キャスト募集中">
+  </div>
 </section>
 
 <section id="about" class="about">
-
+  <div class="about__text common__width">
+    <p class="about__text__01">
+      府中の水着ガールズバー LEGEND ～レジェンド～ は、
+      明るく元気でセクシーな水着姿のキャストがおもてなしします。府中には多くのキャバクラやラウンジが存在する中で、LEGENDは他にはない独自のエクスペリエンスを提供しています。
+      料金システムは良心的で、気軽に楽しめるようになっており、リラックスした雰囲気の中で心地よい時間を過ごすことができます。
+      店内は広く落ち着いた雰囲気で、女の子たちのセクシーな魅力が空間に刺激を加え、楽しさとワクワクが融合しています。カウンター席だけでなくテーブル席もあるユニークで魅力的なガールズバーは、
+    </p>
+    <p class="about__text__02">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/about_text_02.png" alt="府中でLEGEND～レジェンド～だけです。">
+    </p>
+  </div>
 </section>
 
 <?php
@@ -48,12 +69,124 @@ $the_query = new WP_Query($args);
   <?php wp_reset_postdata(); ?>
 </section>
 
-<section id="fee-system" class="fee-system">
-
+<section id="fee-system" class="feesystem">
+  <h2 class="feesystem__title">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/feesystem_title.png" alt="料金システム">
+  </h2>
+  <div class="feesystem__img">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/feesystem_img_01.png" alt="">
+  </div>
+  <table class="feesystem__table common__width">
+    <thead>
+      <tr>
+        <th class="feesystem__table__th">サービス</th>
+        <th class="feesystem__table__th">価格</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="feesystem__table__tr">
+        <td class="feesystem__table__td__01">1SET 45分</td>
+        <td class="feesystem__table__td__02">¥4,000</td>
+      </tr>
+      <tr class="feesystem__table__tr">
+        <td class="feesystem__table__td__01">延長30分</td>
+        <td class="feesystem__table__td__02">¥3,000</td>
+      </tr>
+      <tr class="feesystem__table__tr">
+        <td class="feesystem__table__td__01">延長60分</td>
+        <td class="feesystem__table__td__02">¥6,000</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="feesystem__supplement common__width">
+    <p class="feesystem__supplement__01">TAX/SERVICE 20%</p>
+    <p class="feesystem__supplement__02">生ビール、ウイスキー、焼酎、サワー、各種カクテル飲み放題</p>
+  </div>
+  <a href="#" class="feesystem__link common__width">
+    <p class="feesystem__link__text">メニューを見る</p>
+  </a>
+  <div class="feesystem__asterisk common__width">
+    <p class="feesystem__asterisk__01">※インボイス制度対応</p>
+    <p class="feesystem__asterisk__02">※クレジットカード取扱いあり（クレジットカード手数料はございません）</p>
+  </div>
+  <div class="feesystem__payment">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/feesystem_payment.png"
+      alt="VISA Mastercard JCB AMEX Diners">
+  </div>
 </section>
 
 <section id="access" class="access">
-
+  <h2 class="access__title">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/access_title.png" alt="店舗情報・アクセス">
+  </h2>
+  <table class="access__table common__width">
+    <thead>
+      <tr>
+        <th class="access__table__th">項目</th>
+        <th class="access__table__th">詳細</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="access__table__tr">
+        <td class="access__table__td__01">[店　　名]</td>
+        <td class="access__table__td__02 large">LEGEND　～レジェンド～</td>
+      </tr>
+      <tr class="access__table__tr">
+        <td class="access__table__td__01">[住　　所]</td>
+        <td class="access__table__td__02">東京都府中市府中町1-6-1 古沢ビルB1</td>
+      </tr>
+      <tr class="access__table__tr">
+        <td class="access__table__td__01">[営業時間]</td>
+        <td class="access__table__td__02">19:00 ~ 24:00</td>
+      </tr>
+      <tr class="access__table__tr">
+        <td class="access__table__td__01">[電話番号]</td>
+        <td class="access__table__td__02">090-0000-0000</td>
+      </tr>
+      <tr class="access__table__tr">
+        <td class="access__table__td__01">[最寄り駅]</td>
+        <td class="access__table__td__02">京王線「府中駅」　徒歩１分</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="access__list__container flex__container">
+    <ul class="access__contact__list flex__item grid__container">
+      <li class="access__contact__item grid__item">
+        <a href="#" class="access__contact__item__link">
+          <i class="fa-solid fa-location-dot"></i>
+        </a>
+      </li>
+      <li href="#" class="access__contact__item grid__item">
+        <a class="access__contact__item__link">
+          <i class="fa-solid fa-phone"></i>
+        </a>
+      </li>
+    </ul>
+    <ul class="access__sns__list flex__item grid__container">
+      <li class="access__sns__item grid__item">
+        <a href="#" class="access__sns__item__link">
+          <i class="fa-brands fa-line"></i>
+        </a>
+      </li>
+      <li class="access__sns__item grid__item">
+        <a href="#" class="access__sns__item__link">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </li>
+      <li class="access__sns__item grid__item">
+        <a href="#" class="access__sns__item__link">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="access__map common__width">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.2558333345746!2d139.47476547623106!3d35.67070213055162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018e4fb4913a45b%3A0xdacbfd5e171ef2a2!2zQ0xVQiBMRUdFTkQgKOODrOOCuOOCp-ODs-ODiSk!5e0!3m2!1sja!2sjp!4v1705383417778!5m2!1sja!2sjp"
+      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
 </section>
 
 <section id="cast-blog" class="cast__blog">
@@ -63,7 +196,13 @@ $the_query = new WP_Query($args);
   <?php if (have_posts()): ?>
     <ul class="cast__blog__list common__width">
       <?php while (have_posts()):
-        the_post(); ?>
+        the_post();
+        // 文字数制限
+        $title = get_the_title();
+        $title = wp_trim_words(get_the_title(), 18, '…');
+        $content = get_the_content('', false, '');
+        $content = wp_strip_all_tags($content);
+        ?>
         <li class="cast__blog__item">
           <a href="<?php the_permalink(); ?>" class="cast__blog__item__link grid__container">
             <div class="grid__item">
@@ -72,12 +211,11 @@ $the_query = new WP_Query($args);
               </div>
             </div>
             <div class="grid__item">
-              <?php // the_modified_date(); ?>
               <h3 class="cast__blog__item__title">
-                <?php the_title(); ?>
+                <?= $title ?>
               </h3>
               <div class="cast__blog__item__content">
-                <?php the_content(); ?>
+                <?= $content ?>
               </div>
               <p class="cast__blog__item__author">
                 <?php the_author_meta('nickname'); ?>

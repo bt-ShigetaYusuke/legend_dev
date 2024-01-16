@@ -1,0 +1,74 @@
+.wpcf7 {
+  margin: 5rem auto 0;
+}
+
+.wpcf7-form label {
+  display: block;
+  color: #33bbff;
+  font-weight: bold;
+  font-size: 2.4rem;
+}
+.wpcf7-form label:not(.__submit) {
+  width: 69rem;
+  margin: 0 auto;
+}
+.wpcf7-form label:nth-of-type(n + 2):not(.__submit) {
+  margin: 3rem auto 0;
+}
+.wpcf7-form label.__submit {
+  width: 100%;
+  height: 17rem;
+  background: url(../img/recruit_submit_button.png) no-repeat center / cover;
+}
+
+.wpcf7-form span {
+  display: block;
+  margin: 0.8rem auto 0 0;
+}
+
+.wpcf7-form input,
+.wpcf7-form select,
+.wpcf7-form textarea {
+  width: 100%;
+  border-radius: 1rem;
+  padding: .8rem;
+  background: #fff;
+  color: #333;
+  font-weight: normal;
+}
+
+.wpcf7-form input,
+.wpcf7-form select {
+  height: 6rem;
+}
+
+.wpc7-form textarea {
+  height: 21.5rem;
+}
+
+.wpcf7-form input[name="your-name"],
+.wpcf7-form input[name="your-email"] {
+}
+
+.wpcf7-form span[data-name="your-date"] {
+  width: 33.3rem;
+}
+.wpcf7-form input[name="your-date"] {
+}
+
+.wpcf7-form input[name="your-tel"] {
+}
+
+.wpcf7-form input[type="submit"] {
+  display: none;
+}
+
+.wpcf7-form select {
+}
+
+.wpc7-form option {
+}
+
+.wpcf7-form textarea {
+  resize: none;
+}

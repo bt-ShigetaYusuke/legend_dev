@@ -405,7 +405,7 @@ caption {
 
 td,
 th {
-  vertical-align: top;
+  vertical-align: bottom;
   padding: 0;
 }
 
