@@ -14,14 +14,13 @@
 
 <body>
   <header class="header">
-    <div id="header-hamburger" class="header__hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <div class="header__list__container flex__container">
-      <ul class="header__contact__list">
+    <div class="header__list__container grid__container">
+      <div id="header-hamburger" class="header__hamburger grid__item">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="header__contact__list grid__item grid__container">
         <li class="header__contact__item">
           <a href="" class="header__contact__item__link">
             <i class="fa-solid fa-location-dot"></i>
@@ -33,7 +32,7 @@
           </a>
         </li>
       </ul>
-      <ul class="header__sns__list">
+      <ul class="header__sns__list grid__item grid__container">
         <li class="header__sns__item">
           <a href="" class="header__sns__item__link">
             <i class="fa-brands fa-line"></i>

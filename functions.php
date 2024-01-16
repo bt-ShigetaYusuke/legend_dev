@@ -73,7 +73,6 @@ add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
 
 // カスタム投稿タイプ
 add_action('init', 'create_post_type');
-
 function create_post_type()
 {
   register_post_type(

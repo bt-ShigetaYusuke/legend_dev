@@ -42,9 +42,14 @@ img {
 }
 
 /* #header */
-.header{
+.header {
+  position: sticky;
+  z-index: 1000;
+  top: 0;
   height: 8rem;
+  padding: 1.7rem 3rem 0;
   background: #000;
+  box-shadow: 0px 5px 15px 0px rgba(0, 84, 255, 0.6);
 }
 
 .header__hamburger,
@@ -93,6 +98,50 @@ img {
 .header__hamburger__close span:nth-child(3) {
   top: 1rem;
   transform: rotate(-45deg);
+}
+
+.header__list__container {
+  position: relative;
+  margin: 0 auto;
+}
+.header__list__container.grid__container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 4rem 13.2rem auto;
+  column-gap: 3.5rem;
+}
+
+.header__contact__list.grid__container,
+.header__sns__list.grid__container {
+  display: grid;
+  column-gap: 3.1rem;
+}
+
+.header__contact__list.grid__container {
+  grid-template-columns: repeat(2, 5rem);
+}
+
+.header__sns__list.grid__container {
+  grid-template-columns: repeat(3, 5rem);
+}
+.header__sns__list.grid__item {
+  justify-content: end;
+}
+
+.header__contact__item__link,
+.header__sns__item__link {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100%;
+  background: #ececec;
+}
+.header__contact__item__link i,
+.header__sns__item__link i {
+  color: #000;
+  font-size: 3.4rem;
 }
 
 .header__overlay {
@@ -220,14 +269,14 @@ img {
   padding: 0 0 0 3.5rem;
   margin: 0 0 0 3.5rem;
 }
-.header__nav__sns__list::before{
+.header__nav__sns__list::before {
   content: "";
   position: absolute;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
   height: 4.6rem;
-  border-left: dotted #333 2pxpx;
+  border-left: dotted #333 2px;
 }
 
 .header__nav__contact__item__link i,
