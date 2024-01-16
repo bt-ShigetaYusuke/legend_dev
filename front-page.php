@@ -10,7 +10,7 @@
   </div>
   <div class="firstview__text">
     <p class="firstview__text__01">東京都府中市府中町1-6-1 古沢ビルB1（府中駅 徒歩1分）</p>
-    <p class="firstview__text__02">open <span class="large">19:00</span> > close <span class="large">24:00</span></p>
+    <p class="firstview__text__02">open <span class="large"><?= get_business_hours_start() ?></span> > close <span class="large"><?= get_business_hours_end() ?></span></p>
   </div>
 </section>
 
@@ -137,7 +137,7 @@ $the_query = new WP_Query($args);
       </tr>
       <tr class="access__table__tr">
         <td class="access__table__td__01">[営業時間]</td>
-        <td class="access__table__td__02">19:00 ~ 24:00</td>
+        <td class="access__table__td__02"><?= get_business_hours_range() ?></td>
       </tr>
       <tr class="access__table__tr">
         <td class="access__table__td__01">[電話番号]</td>

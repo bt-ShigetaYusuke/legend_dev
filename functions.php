@@ -100,3 +100,87 @@ function wpcf7_autop_return_false()
 {
   return false;
 }
+
+// 管理画面カスタマイズ
+function add_custom_menu()
+{
+  add_menu_page(
+    '店舗情報',
+    '店舗情報',
+    'manage_options', // 権限
+    'custom_menu_slug',
+    'custom_menu_page_render', // 描画関数
+    '', // アイコンURL
+    99 // メニューの位置
+  );
+}
+add_action('admin_menu', 'add_custom_menu');
+
+function custom_menu_page_render()
+{
+  // 保存された情報を取得
+  $business_hours_start = get_option('business_hours_start', '');
+  $business_hours_end = get_option('business_hours_end', '');
+  $phone_number = get_option('phone_number', '');
+
+  echo '<h2>店舗情報</h2>';
+  echo '<form method="post" action="options.php">';
+
+  // この関数WordPressのセキュリティ機能を利用するために必要
+  settings_fields('custom_menu_group');
+
+  echo '<table class="form-table">';
+  echo '<tr valign="top">';
+  echo '<th scope="row">営業時間（開始）</th>';
+  echo '<td><input type="text" name="business_hours_start" value="' . esc_attr($business_hours_start) . '" /></td>';
+  echo '</tr>';
+  echo '<tr valign="top">';
+  echo '<th scope="row">営業時間（終了）</th>';
+  echo '<td><input type="text" name="business_hours_end" value="' . esc_attr($business_hours_end) . '" /></td>';
+  echo '</tr>';
+  echo '<tr valign="top">';
+  echo '<th scope="row">電話番号</th>';
+  echo '<td><input type="text" name="phone_number" value="' . esc_attr($phone_number) . '" /></td>';
+  echo '</tr>';
+  echo '</table>';
+
+  submit_button();
+
+  echo '</form>';
+}
+
+// 管理画面の初期化時に実行
+add_action('admin_init', 'custom_menu_init');
+function custom_menu_init()
+{
+  // 設定を登録
+  register_setting('custom_menu_group', 'business_hours_start');
+  register_setting('custom_menu_group', 'business_hours_end');
+  register_setting('custom_menu_group', 'phone_number');
+}
+
+// 営業時間（開始）を取得する関数
+function get_business_hours_start()
+{
+  return get_option('business_hours_start', '');
+}
+
+// 営業時間（終了）を取得する関数
+function get_business_hours_end()
+{
+  return get_option('business_hours_end', '');
+}
+
+// 営業時間（開始から終了）を取得する関数
+function get_business_hours_range()
+{
+  $start = get_business_hours_start();
+  $end = get_business_hours_end();
+  return $start . ' ~ ' . $end;
+}
+
+// 電話番号を取得する関数
+function get_phone_number()
+{
+  return get_option('phone_number', '');
+}

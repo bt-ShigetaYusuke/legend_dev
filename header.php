@@ -69,11 +69,11 @@
       <ul class="header__nav__contact__info__list">
         <li class="header__nav__contact__info__item">
           <p class="header__nav__contact__info__item__title">電話番号</p>
-          <p class="header__nav__contact__info__item__text"><span class="large">090-1234-5678</span></p>
+          <p class="header__nav__contact__info__item__text"><span class="large"><?= get_phone_number() ?></span></p>
         </li>
         <li class="header__nav__contact__info__item">
           <p class="header__nav__contact__info__item__title">営業時間</p>
-          <p class="header__nav__contact__info__item__text"><span class="large">19:00~24:00</span>（日曜・年末年始休み）</p>
+          <p class="header__nav__contact__info__item__text"><span class="large"><?= get_business_hours_range() ?></span>（日曜・年末年始休み）</p>
         </li>
         <li class="header__nav__contact__info__item">
           <p class="header__nav__contact__info__item__title">住所</p>
