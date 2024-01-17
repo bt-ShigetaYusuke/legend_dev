@@ -1,3 +1,45 @@
+/* #banner */
+
+/* #recruitmenttype */
+.recruitmenttype{
+  
+}
+
+.recruitmenttype__title{
+  width: 19.4rem;
+  margin: 0 auto;
+}
+
+.recruitmenttype__list.grid__container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 1rem;
+  column-gap: .8rem;
+}
+
+.recruitmenttype__item__link{
+  display: grid;
+  align-content: center;
+  height: 9rem;
+  border-radius: 2rem;
+  padding: 0 1rem 0 1.7rem;
+  background: #676867;
+}
+
+.recruitmenttype__item__link__text{
+  width: 100%;
+  font-size: 2.4rem !important;
+}
+
+/* #counterlady */
+.counterlady__label__list.grid__container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: .4rem;
+  column-gap: .4rem;
+}
+
+/* #form */
 .wpcf7 {
   margin: 5rem auto 0;
 }
