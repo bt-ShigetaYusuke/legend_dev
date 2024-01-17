@@ -1,3 +1,138 @@
+/* #common */
+/* #common__jobtype */
+.common__jobtype__label__list.grid__container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: .4rem;
+  column-gap: .4rem;
+}
+
+.common__jobtype__text__top{
+  margin: 5rem auto 0;
+  font-size: 2.4rem;
+}
+.common__jobtype__text__top .--asterisk{
+  color: #ff8080;
+}
+
+.common__jobtype__workingstyle__list{
+  margin: 10rem auto 0;
+}
+
+.common__jobtype__workingstyle__item{
+  
+}
+.common__jobtype__workingstyle__item:nth-child(n + 2){
+  margin: 8rem auto 0;
+}
+.common__jobtype__workingstyle__item.__treatment .grid__container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.common__jobtype__workingstyle__item.__location .grid__container{
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 23rem;
+  column-gap: 5.1rem;
+}
+.common__jobtype__workingstyle__item.__location .common__jobtype__workingstyle__item__map{
+  display: flex;
+  align-items: center;
+  column-gap: .8rem;
+  font-size: 2.4rem;
+}
+.common__jobtype__workingstyle__item.__location .common__jobtype__workingstyle__item__map i{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  background: #fff;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 100%;
+  font-size: 3.5rem;
+}
+
+.common__jobtype__workingstyle__item__title{
+  margin: 0 0 .5rem;
+  color: #33bbff;
+  font-weight: bold;
+}
+
+.common__jobtype__workingstyle__item__text{
+  font-size: 2.4rem;
+}
+.common__jobtype__workingstyle__item__text .--large{
+  font-weight: bold;
+  font-size: 3.6rem;
+}
+
+/* #banner */
+
+/* #recruitmenttype */
+.recruitmenttype{
+  
+}
+
+.recruitmenttype__title{
+  width: 19.4rem;
+  margin: 0 auto;
+}
+
+.recruitmenttype__list.grid__container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 1rem;
+  column-gap: .8rem;
+}
+
+.recruitmenttype__item__link{
+  display: grid;
+  align-content: center;
+  height: 9rem;
+  border-radius: 2rem;
+  padding: 0 1rem 0 1.7rem;
+  background: #676867;
+}
+
+.recruitmenttype__item__link__text{
+  width: 100%;
+  font-size: 2.4rem !important;
+}
+
+/* #recruitapply */
+.recruitapply{
+  margin: 10rem auto 0;
+}
+.recruitapply__title{
+  width: 59.2rem;
+  margin: 0 auto;
+}
+
+.recruitapply__list{
+  width: 40rem;
+  margin: 0 auto;
+}
+
+.recruitapply__item:nth-child(n + 2){
+  margin: 2.9rem auto 0;
+}
+
+/* #recruit-form */
+.recruit__form{
+  margin: 7.8rem auto 0;
+}
+
+.recruit__form__title{
+  color: #33bbff;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.recruit__form__text__top{
+  font-size: 2.4rem;
+}
+
 .wpcf7 {
   margin: 5rem auto 0;
 }

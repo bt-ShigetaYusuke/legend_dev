@@ -41,6 +41,28 @@ img {
   margin: 0 auto;
 }
 
+.common__section {
+  padding: 3.2rem 0 0;
+}
+
+.common__link p {
+  position: relative;
+  display: inline-block;
+  padding: 0 2.5rem 0 0;
+  font-size: 1.8rem;
+}
+
+.common__link p::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  background: url(../img/feesystem_link_icon.png) no-repeat center / cover;
+}
+
 /* #header */
 .header {
   position: sticky;
@@ -163,13 +185,14 @@ img {
 
 .header__nav {
   position: fixed;
+  overflow-y: scroll;
   top: 0;
   left: -72.5rem;
   width: 72.1rem;
   height: 100%;
   padding: 2.3rem 3rem 3rem;
   background: #fff;
-  color: #333;
+  color: #2b2b2b;
   transition: left 0.3s;
   z-index: 1000;
 }

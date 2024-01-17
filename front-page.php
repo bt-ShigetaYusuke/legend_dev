@@ -10,14 +10,14 @@
   </div>
   <div class="firstview__text">
     <p class="firstview__text__01">東京都府中市府中町1-6-1 古沢ビルB1（府中駅 徒歩1分）</p>
-    <p class="firstview__text__02">open <span class="large">19:00</span> > close <span class="large">24:00</span></p>
+    <p class="firstview__text__02">open <span class="large"><?= get_business_hours_start() ?></span> > close <span class="large"><?= get_business_hours_end() ?></span></p>
   </div>
 </section>
 
 <section id="banner" class="banner">
-  <div class="banner__img">
+  <a href="<?= home_url('/recruit?param=counter-lady') ?>" class="banner__img">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/banner_img.png" alt="キャスト募集中">
-  </div>
+  </a>
 </section>
 
 <section id="about" class="about">
@@ -43,14 +43,14 @@ $args = array(
 $the_query = new WP_Query($args);
 ?>
 
-<section id="cast" class="cast">
+<section id="cast" class="cast common__section">
   <h2 class="cast__title">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_title.png" alt="キャスト">
   </h2>
-  <?php if ($the_query->have_posts()): ?>
+  <?php if ($the_query->have_posts()) : ?>
     <div class="swiper mySwiper">
       <ul class="cast__list swiper-wrapper">
-        <?php while ($the_query->have_posts()):
+        <?php while ($the_query->have_posts()) :
           $the_query->the_post(); ?>
           <li class="cast__item swiper-slide">
             <a href="<?php the_permalink(); ?>">
@@ -67,9 +67,12 @@ $the_query = new WP_Query($args);
     </div>
   <?php endif; ?>
   <?php wp_reset_postdata(); ?>
+  <a href="<?= home_url('/archive-cast') ?>" class="cast__link common__width common__link">
+    <p class="cast__link__text">他のキャストを見る</p>
+  </a>
 </section>
 
-<section id="fee-system" class="feesystem">
+<section id="fee-system" class="feesystem common__section">
   <h2 class="feesystem__title">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/feesystem_title.png" alt="料金システム">
   </h2>
@@ -98,11 +101,11 @@ $the_query = new WP_Query($args);
       </tr>
     </tbody>
   </table>
-  <div class="feesystem__supplement common__width">
+  <div class="feesystem__supplement common__section common__width">
     <p class="feesystem__supplement__01">TAX/SERVICE 20%</p>
     <p class="feesystem__supplement__02">生ビール、ウイスキー、焼酎、サワー、各種カクテル飲み放題</p>
   </div>
-  <a href="#" class="feesystem__link common__width">
+  <a href="<?= home_url('/menu') ?>" class="feesystem__link common__width common__link">
     <p class="feesystem__link__text">メニューを見る</p>
   </a>
   <div class="feesystem__asterisk common__width">
@@ -110,12 +113,11 @@ $the_query = new WP_Query($args);
     <p class="feesystem__asterisk__02">※クレジットカード取扱いあり（クレジットカード手数料はございません）</p>
   </div>
   <div class="feesystem__payment">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/feesystem_payment.png"
-      alt="VISA Mastercard JCB AMEX Diners">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/feesystem_payment.png" alt="VISA Mastercard JCB AMEX Diners">
   </div>
 </section>
 
-<section id="access" class="access">
+<section id="access" class="access common__section">
   <h2 class="access__title">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/access_title.png" alt="店舗情報・アクセス">
   </h2>
@@ -137,7 +139,7 @@ $the_query = new WP_Query($args);
       </tr>
       <tr class="access__table__tr">
         <td class="access__table__td__01">[営業時間]</td>
-        <td class="access__table__td__02">19:00 ~ 24:00</td>
+        <td class="access__table__td__02"><?= get_business_hours_range() ?></td>
       </tr>
       <tr class="access__table__tr">
         <td class="access__table__td__01">[電話番号]</td>
@@ -152,57 +154,62 @@ $the_query = new WP_Query($args);
   <div class="access__list__container flex__container">
     <ul class="access__contact__list flex__item grid__container">
       <li class="access__contact__item grid__item">
-        <a href="#" class="access__contact__item__link">
+        <a href="<?= MAP_URL ?>" class="access__contact__item__link">
           <i class="fa-solid fa-location-dot"></i>
         </a>
       </li>
-      <li href="#" class="access__contact__item grid__item">
-        <a class="access__contact__item__link">
+      <li class="access__contact__item grid__item">
+        <a href="tel:<?= get_phone_number() ?>" class="access__contact__item__link">
           <i class="fa-solid fa-phone"></i>
         </a>
       </li>
     </ul>
     <ul class="access__sns__list flex__item grid__container">
       <li class="access__sns__item grid__item">
-        <a href="#" class="access__sns__item__link">
+        <a href="<?= get_sns_line_url() ?>" class="access__sns__item__link">
           <i class="fa-brands fa-line"></i>
         </a>
       </li>
       <li class="access__sns__item grid__item">
-        <a href="#" class="access__sns__item__link">
+        <a href="<?= get_sns_instagram_url() ?>" class="access__sns__item__link">
           <i class="fa-brands fa-instagram"></i>
         </a>
       </li>
       <li class="access__sns__item grid__item">
-        <a href="#" class="access__sns__item__link">
+        <a href="<?= get_sns_tiktok_url() ?>" class="access__sns__item__link">
           <i class="fa-brands fa-tiktok"></i>
         </a>
       </li>
     </ul>
   </div>
   <div class="access__map common__width">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.2558333345746!2d139.47476547623106!3d35.67070213055162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018e4fb4913a45b%3A0xdacbfd5e171ef2a2!2zQ0xVQiBMRUdFTkQgKOODrOOCuOOCp-ODs-ODiSk!5e0!3m2!1sja!2sjp!4v1705383417778!5m2!1sja!2sjp"
-      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.2558333345746!2d139.47476547623106!3d35.67070213055162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018e4fb4913a45b%3A0xdacbfd5e171ef2a2!2zQ0xVQiBMRUdFTkQgKOODrOOCuOOCp-ODs-ODiSk!5e0!3m2!1sja!2sjp!4v1705383417778!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
     </iframe>
   </div>
 </section>
 
-<section id="cast-blog" class="cast__blog">
+<?php
+$args = array(
+  'post_type' => 'post',
+  'posts_per_page' => 5,
+);
+
+$the_query = new WP_Query($args);
+?>
+
+<section id="cast-blog" class="cast__blog common__section">
   <h2 class="cast__blog__title">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_blog_title.png" alt="キャスト ブログ">
   </h2>
-  <?php if (have_posts()): ?>
+  <?php if ($the_query->have_posts()) : ?>
     <ul class="cast__blog__list common__width">
-      <?php while (have_posts()):
-        the_post();
+      <?php while ($the_query->have_posts()) : $the_query->the_post();
         // 文字数制限
         $title = get_the_title();
         $title = wp_trim_words(get_the_title(), 18, '…');
         $content = get_the_content('', false, '');
         $content = wp_strip_all_tags($content);
-        ?>
+      ?>
         <li class="cast__blog__item">
           <a href="<?php the_permalink(); ?>" class="cast__blog__item__link grid__container">
             <div class="grid__item">
@@ -225,12 +232,13 @@ $the_query = new WP_Query($args);
         </li>
       <?php endwhile; ?>
     </ul>
-  <?php else: ?>
+  <?php else : ?>
     <div class="cast__blog__error">
       <p>お探しの記事は見つかりませんでした。</p>
     </div>
   <?php endif; ?>
-  <a href="" class="cast__blog__button">
+  <?php wp_reset_postdata(); ?>
+  <a href="<?= home_url('/archive-blog') ?>" class="cast__blog__button">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_blog_button.png" alt="もっと見る">
   </a>
 </section>
