@@ -1,4 +1,6 @@
 <?php
+const MAP_URL = 'https://maps.app.goo.gl/jQjrPJ1rKmGc8FqVA';
+
 // アイキャッチ画像
 function setup_theme()
 {
@@ -47,14 +49,23 @@ function theme_enqueue_styles()
   if (is_front_page() || is_home()) {
     $styles['top-style'] = get_template_directory_uri() . '/assets/css/top.css';
   }
-  if (is_singular('cast')) {
-    $styles['cast-style'] = get_template_directory_uri() . '/assets/css/single-cast.css';
+  if (is_singular('')) {
+    $styles['single-style'] = get_template_directory_uri() . '/assets/css/single.css';
   }
-  if (is_post_type_archive('cast')) {
-    $styles['archive-cast-style'] = get_template_directory_uri() . '/assets/css/archive-cast.css';
+  if (is_singular('cast')) {
+    $styles['single-cast-style'] = get_template_directory_uri() . '/assets/css/single-cast.css';
   }
   if (is_page('recruit')) {
     $styles['page-recruit-style'] = get_template_directory_uri() . '/assets/css/page-recruit.css';
+  }
+  if (is_page('archive-blog')) {
+    $styles['page-archive-blog-style'] = get_template_directory_uri() . '/assets/css/page-archive-blog.css';
+  }
+  if (is_page('archive-cast')) {
+    $styles['page-archive-cast-style'] = get_template_directory_uri() . '/assets/css/page-archive-cast.css';
+  }
+  if (is_page('menu')) {
+    $styles['page-menu-style'] = get_template_directory_uri() . '/assets/css/page-menu.css';
   }
 
   foreach ($styles as $id => $url) {
@@ -122,31 +133,51 @@ function custom_menu_page_render()
   $business_hours_start = get_option('business_hours_start', '');
   $business_hours_end = get_option('business_hours_end', '');
   $phone_number = get_option('phone_number', '');
-
-  echo '<h2>店舗情報</h2>';
-  echo '<form method="post" action="options.php">';
-
-  // この関数WordPressのセキュリティ機能を利用するために必要
-  settings_fields('custom_menu_group');
-
-  echo '<table class="form-table">';
-  echo '<tr valign="top">';
-  echo '<th scope="row">営業時間（開始）</th>';
-  echo '<td><input type="text" name="business_hours_start" value="' . esc_attr($business_hours_start) . '" /></td>';
-  echo '</tr>';
-  echo '<tr valign="top">';
-  echo '<th scope="row">営業時間（終了）</th>';
-  echo '<td><input type="text" name="business_hours_end" value="' . esc_attr($business_hours_end) . '" /></td>';
-  echo '</tr>';
-  echo '<tr valign="top">';
-  echo '<th scope="row">電話番号</th>';
-  echo '<td><input type="text" name="phone_number" value="' . esc_attr($phone_number) . '" /></td>';
-  echo '</tr>';
-  echo '</table>';
-
-  submit_button();
-
-  echo '</form>';
+  // sns
+  $sns_line_url = get_option('sns_line_url', '');
+  $sns_instagram_url = get_option('sns_instagram_url', '');
+  $sns_tiktok_url = get_option('sns_tiktok_url', '');
+?>
+  <h2 style="color: blue;">店舗情報</h2>
+  <form method="post" action="options.php">
+    <?php
+    // この関数WordPressのセキュリティ機能を利用するために必要
+    settings_fields('custom_menu_group');
+    ?>
+    <table class="form-table">
+      <tr valign="top">
+        <th scope="row">営業時間（開始）</th>
+        <td><input type="text" name="business_hours_start" value="<?php echo esc_attr($business_hours_start); ?>" /></td>
+      </tr>
+      <tr valign="top">
+        <th scope="row">営業時間（終了）</th>
+        <td><input type="text" name="business_hours_end" value="<?php echo esc_attr($business_hours_end); ?>" /></td>
+      </tr>
+      <tr valign="top">
+        <th scope="row">電話番号</th>
+        <td><input type="text" name="phone_number" value="<?php echo esc_attr($phone_number); ?>" /></td>
+      </tr>
+    </table>
+    <h2 style="color: blue;">SNSのURL</h2>
+    <table class="form-table">
+      <tr valign="top">
+        <th scope="row">LINEのURL</th>
+        <td><input type="text" name="sns_line_url" value="<?php echo esc_attr($sns_line_url); ?>" /></td>
+      </tr>
+      <tr valign="top">
+        <th scope="row">InstagramのURL</th>
+        <td><input type="text" name="sns_instagram_url" value="<?php echo esc_attr($sns_instagram_url); ?>" /></td>
+      </tr>
+      <tr valign="top">
+        <th scope="row">TikTokのURL</th>
+        <td><input type="text" name="sns_tiktok_url" value="<?php echo esc_attr($sns_tiktok_url); ?>" /></td>
+      </tr>
+    </table>
+    <?php
+    submit_button();
+    ?>
+  </form>
+<?php
 }
 
 // 管理画面の初期化時に実行
@@ -157,6 +188,9 @@ function custom_menu_init()
   register_setting('custom_menu_group', 'business_hours_start');
   register_setting('custom_menu_group', 'business_hours_end');
   register_setting('custom_menu_group', 'phone_number');
+  register_setting('custom_menu_group', 'sns_line_url');
+  register_setting('custom_menu_group', 'sns_instagram_url');
+  register_setting('custom_menu_group', 'sns_tiktok_url');
 }
 
 // 営業時間（開始）を取得する関数
@@ -183,4 +217,22 @@ function get_business_hours_range()
 function get_phone_number()
 {
   return get_option('phone_number', '');
+}
+
+// Line
+function get_sns_line_url()
+{
+  return get_option('sns_line_url', '');
+}
+
+// Instagram
+function get_sns_instagram_url()
+{
+  return get_option('sns_instagram_url', '');
+}
+
+// TikTok
+function get_sns_tiktok_url()
+{
+  return get_option('sns_tiktok_url', '');
 }

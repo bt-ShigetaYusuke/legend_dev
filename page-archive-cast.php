@@ -11,8 +11,8 @@ $wp_query = new WP_Query($args);
 
 <?php get_header(); ?>
 
-<?php if ($wp_query->have_posts()): ?>
-  <?php while ($wp_query->have_posts()):
+<?php if ($wp_query->have_posts()) : ?>
+  <?php while ($wp_query->have_posts()) :
     $wp_query->the_post(); ?>
     <h2>
       <?php echo get_the_title(); ?>
@@ -24,7 +24,7 @@ $wp_query = new WP_Query($args);
       <?php the_post_thumbnail(); ?>
     </div>
   <?php endwhile; ?>
-<?php else: ?>
+<?php else : ?>
 
 <?php endif; ?>
 <?php wp_reset_postdata(); ?>

@@ -44,6 +44,10 @@
   text-align: center;
 }
 
+.cast__link {
+  text-align: right;
+}
+
 /* #fee-system */
 .feesystem {
 }
@@ -71,23 +75,6 @@
   font-weight: bold;
 }
 .feesystem__supplement .feesystem__supplement__02 {
-}
-
-.feesystem__link .feesystem__link__text {
-  position: relative;
-  display: inline-block;
-  padding: 0 2.5rem 0 0;
-  font-size: 1.8rem;
-}
-.feesystem__link .feesystem__link__text::before {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 2rem;
-  height: 2rem;
-  background: url(../img/feesystem_link_icon.png) no-repeat center / cover;
 }
 
 .feesystem__asterisk {
@@ -159,7 +146,7 @@
 .access__map {
   height: 58.1rem;
   box-shadow: 0 0 2rem 1rem rgba(0, 84, 255, 0.6);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 .access__map iframe {
   width: 100%;

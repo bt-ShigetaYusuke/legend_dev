@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="<?php bloginfo('charset'); ?>">
-  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   <title>
     <?php bloginfo('name'); ?>
   </title>
@@ -22,29 +21,29 @@
       </div>
       <ul class="header__contact__list grid__item grid__container">
         <li class="header__contact__item">
-          <a href="" class="header__contact__item__link">
+          <a href="<?= MAP_URL ?>" class="header__contact__item__link">
             <i class="fa-solid fa-location-dot"></i>
           </a>
         </li>
         <li class="header__contact__item">
-          <a href="" class="header__contact__item__link">
+          <a href="tel:<?= get_phone_number() ?>" class="header__contact__item__link">
             <i class="fa-solid fa-phone"></i>
           </a>
         </li>
       </ul>
       <ul class="header__sns__list grid__item grid__container">
         <li class="header__sns__item">
-          <a href="" class="header__sns__item__link">
+          <a href="<?= get_sns_line_url() ?>" class="header__sns__item__link">
             <i class="fa-brands fa-line"></i>
           </a>
         </li>
         <li class="header__sns__item">
-          <a href="" class="header__sns__item__link">
+          <a href="<?= get_sns_instagram_url() ?>" class="header__sns__item__link">
             <i class="fa-brands fa-instagram"></i>
           </a>
         </li>
         <li class="header__sns__item">
-          <a href="" class="header__sns__item__link">
+          <a href="<?= get_sns_tiktok_url() ?>" class="header__sns__item__link">
             <i class="fa-brands fa-tiktok"></i>
           </a>
         </li>
@@ -59,21 +58,28 @@
         <span></span>
       </div>
       <ul class="header__nav__list">
-        <li class="header__nav__item"><a href="#" class="header__nav__item__link">TOP</a></li>
-        <li class="header__nav__item"><a href="#" class="header__nav__item__link">キャスト</a></li>
-        <li class="header__nav__item"><a href="#" class="header__nav__item__link">料金システム</a></li>
-        <li class="header__nav__item"><a href="#" class="header__nav__item__link">店舗情報・アクセス</a></li>
-        <li class="header__nav__item"><a href="#" class="header__nav__item__link">求人情報</a></li>
-        <li class="header__nav__item"><a href="#" class="header__nav__item__link">キャストブログ</a></li>
+        <li class="header__nav__item"><a href="<?= home_url() ?>" class="header__nav__item__link">TOP</a></li>
+        <li class="header__nav__item"><a href="<?= home_url('/#cast') ?>" class="header__nav__item__link">キャスト</a></li>
+        <li class="header__nav__item"><a href="<?= home_url('/#fee-system') ?>" class="header__nav__item__link">料金システム</a></li>
+        <li class="header__nav__item"><a href="<?= home_url('/#access') ?>" class="header__nav__item__link">店舗情報・アクセス</a></li>
+        <li class="header__nav__item"><a href="<?= home_url('/recruit') ?>" class="header__nav__item__link">求人情報</a></li>
+        <li class="header__nav__item"><a href="<?= home_url('/#cast-blog') ?>" class="header__nav__item__link">キャストブログ</a></li>
       </ul>
       <ul class="header__nav__contact__info__list">
         <li class="header__nav__contact__info__item">
           <p class="header__nav__contact__info__item__title">電話番号</p>
-          <p class="header__nav__contact__info__item__text"><span class="large"><?= get_phone_number() ?></span></p>
+          <a href="tel:<?= get_phone_number() ?>" class="header__nav__contact__info__item__text">
+            <span class="large">
+              <?= get_phone_number() ?>
+            </span></a>
         </li>
         <li class="header__nav__contact__info__item">
           <p class="header__nav__contact__info__item__title">営業時間</p>
-          <p class="header__nav__contact__info__item__text"><span class="large"><?= get_business_hours_range() ?></span>（日曜・年末年始休み）</p>
+          <p class="header__nav__contact__info__item__text">
+            <span class="large">
+              <?= get_business_hours_range() ?>
+            </span>（日曜・年末年始休み）
+          </p>
         </li>
         <li class="header__nav__contact__info__item">
           <p class="header__nav__contact__info__item__title">住所</p>
@@ -85,30 +91,30 @@
       </ul>
       <div class="header__nav__list__container flex__container">
         <ul class="header__nav__contact__list flex__item grid__container">
-          <li href="#" class="header__nav__contact__item grid__item">
-            <a class="header__nav__contact__item__link">
+          <li class="header__nav__contact__item grid__item">
+            <a href="<?= MAP_URL ?>" class="header__nav__contact__item__link">
               <i class="fa-solid fa-location-dot"></i>
             </a>
           </li>
           <li class="header__nav__contact__item grid__item">
-            <a href="#" class="header__nav__contact__item__link">
+            <a href="tel:<?= get_phone_number() ?>" class="header__nav__contact__item__link">
               <i class="fa-solid fa-phone"></i>
             </a>
           </li>
         </ul>
         <ul class="header__nav__sns__list flex__item grid__container">
           <li class="header__nav__sns__item grid__item">
-            <a href="#" class="header__nav__sns__item__link">
+            <a href="<?= get_sns_line_url() ?>" class="header__nav__sns__item__link">
               <i class="fa-brands fa-line"></i>
             </a>
           </li>
           <li class="header__nav__sns__item grid__item">
-            <a href="#" class="header__nav__sns__item__link">
+            <a href="<?= get_sns_instagram_url() ?>" class="header__nav__sns__item__link">
               <i class="fa-brands fa-instagram"></i>
             </a>
           </li>
           <li class="header__nav__sns__item grid__item">
-            <a href="#" class="header__nav__sns__item__link">
+            <a href="<?= get_sns_tiktok_url() ?>" class="header__nav__sns__item__link">
               <i class="fa-brands fa-tiktok"></i>
             </a>
           </li>
