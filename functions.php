@@ -137,6 +137,7 @@ function custom_menu_page_render()
   $sns_line_url = get_option('sns_line_url', '');
   $sns_instagram_url = get_option('sns_instagram_url', '');
   $sns_tiktok_url = get_option('sns_tiktok_url', '');
+  $recruit_email = get_option('recruit_email', '');
 ?>
   <h2 style="color: blue;">店舗情報</h2>
   <form method="post" action="options.php">
@@ -173,6 +174,13 @@ function custom_menu_page_render()
         <td><input type="text" name="sns_tiktok_url" value="<?php echo esc_attr($sns_tiktok_url); ?>" /></td>
       </tr>
     </table>
+    <h2 style="color: blue;">求人募集</h2>
+    <table class="form-table">
+      <tr valign="top">
+        <th scope="row">求人募集用メールアドレス</th>
+        <td><input type="text" name="recruit_email" value="<?php echo esc_attr($recruit_email); ?>" /></td>
+      </tr>
+    </table>
     <?php
     submit_button();
     ?>
@@ -191,6 +199,7 @@ function custom_menu_init()
   register_setting('custom_menu_group', 'sns_line_url');
   register_setting('custom_menu_group', 'sns_instagram_url');
   register_setting('custom_menu_group', 'sns_tiktok_url');
+  register_setting('custom_menu_group', 'recruit_email');
 }
 
 // 営業時間（開始）を取得する関数
@@ -235,4 +244,10 @@ function get_sns_instagram_url()
 function get_sns_tiktok_url()
 {
   return get_option('sns_tiktok_url', '');
+}
+
+// 求人募集のメールアドレス
+function get_recruit_email()
+{
+  return get_option('recruit_email', '');
 }
