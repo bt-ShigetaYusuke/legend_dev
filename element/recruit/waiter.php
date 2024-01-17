@@ -73,7 +73,7 @@ $items = range(1, 11);
     </li>
     <li class="waiter__workingstyle__item common__jobtype__workingstyle__item">
       <h3 class="waiter__workingstyle__item__title common__jobtype__workingstyle__item__title">体験入店</h3>
-      <p class="waiter__workingstyle__item__textcommon__jobtype__workingstyle__item__text">
+      <p class="waiter__workingstyle__item__text common__jobtype__workingstyle__item__text">
         カウンターレディーの体験入店を随時受け付けております。<br>
         時給<span class="--large">3,500</span>円<br>
         通常のガールズバーと違い水着が衣装です。<br>

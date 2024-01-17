@@ -58,9 +58,7 @@ function handleAnchorClicks() {
   });
 }
 
-if (window.location.pathname === "/") {
-  handleAnchorClicks();
-}
+handleAnchorClicks();
 
 // swiper トップページ
 function swiper() {
