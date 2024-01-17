@@ -16,7 +16,7 @@
   </h2>
   <ul class="recruitmenttype__list grid__container common__width">
     <li class="recruitmenttype__item grid__item">
-      <a href="<?= home_url('/recruit/counter-lady') ?>" class="recruitmenttype__item__link common__link">
+      <a href="<?= home_url('/recruit?param=counter-lady') ?>" class="recruitmenttype__item__link common__link">
         <p class="recruitmenttype__item__link__text">カウンターレディー</p>
       </a>
     </li>
@@ -26,12 +26,12 @@
       </a>
     </li>
     <li class="recruitmenttype__item grid__item">
-      <a href="<?= home_url('/recruit/feed-driver') ?>" class="recruitmenttype__item__link common__link">
+      <a href="<?= home_url('/recruit?param=feed-driver') ?>" class="recruitmenttype__item__link common__link">
         <p class="recruitmenttype__item__link__text">送りドライバー</p>
       </a>
     </li>
     <li class="recruitmenttype__item grid__item">
-      <a href="<?= home_url('/recruit/waiter') ?>" class="recruitmenttype__item__link common__link">
+      <a href="<?= home_url('/recruit?param=waiter') ?>" class="recruitmenttype__item__link common__link">
         <p class="recruitmenttype__item__link__text">ウェイター・ウェイトレス</p>
       </a>
     </li>

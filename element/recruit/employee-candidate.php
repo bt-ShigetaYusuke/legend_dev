@@ -2,9 +2,9 @@
 $items = range(1, 11);
 ?>
 
-<section id="employeecandidate" class="employeecandidate common__recruit__section">
+<section id="employee-candidate" class="employeecandidate common__recruit__section">
   <h2 class="employeecandidate__title common__title">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/recruit/employee-candidate/employeecandidate_title.png" alt="募集職種">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/recruit/employee-candidate/employeecandidate_title.png" alt="社員候補">
   </h2>
   <ul class="employeecandidate__label__list grid__container common__width common__jobtype__label__list">
     <?php foreach ($items as $item) : ?>

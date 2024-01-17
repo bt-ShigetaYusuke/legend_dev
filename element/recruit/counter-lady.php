@@ -4,7 +4,7 @@ $items = range(1, 11);
 
 <section id="counterlady" class="counterlady common__recruit__section">
   <h2 class="counterlady__title common__title">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/recruit/counter-lady/counterlady_title.png" alt="募集職種">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/recruit/counter-lady/counterlady_title.png" alt="カウンターレディー">
   </h2>
   <ul class="counterlady__label__list grid__container common__width common__jobtype__label__list">
     <?php foreach ($items as $item) : ?>
