@@ -37,7 +37,7 @@
 <?php
 $args = array(
   'post_type' => 'cast',
-  'posts_per_page' => 50,
+  'posts_per_page' => -1,
 );
 
 $the_query = new WP_Query($args);
@@ -68,7 +68,7 @@ $the_query = new WP_Query($args);
   <?php endif; ?>
   <?php wp_reset_postdata(); ?>
   <a href="<?= home_url('/archive-cast') ?>" class="cast__link common__width common__link">
-    <p class="cast__link__text">他のキャストを見る</p>
+    <p class="cast__link__text">全てのキャストを見る</p>
   </a>
 </section>
 
@@ -191,6 +191,7 @@ $the_query = new WP_Query($args);
 <?php
 $args = array(
   'post_type' => 'post',
+  // 'category_name' => 'cast',
   'posts_per_page' => 5,
 );
 

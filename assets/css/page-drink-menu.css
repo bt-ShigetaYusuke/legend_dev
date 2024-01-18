@@ -1,0 +1,39 @@
+section{
+  padding: 10rem 0 0;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 3rem;
+  margin: 0 0 2rem;
+}
+
+p,
+li,
+td {
+  font-size: 2.4rem;
+}
+
+table {
+  width: 100%;
+  margin: 0 auto 4rem;
+}
+
+th,
+td {
+  vertical-align: top;
+}
+
+td p{
+  padding: 2rem 0 2rem;
+}
+
+.allyoucandrink__table th {
+  width: 18rem;
+}
+
+.special__menu th:first-child,
+.special__menu td:first-child{
+  width: 56rem;
+}
+

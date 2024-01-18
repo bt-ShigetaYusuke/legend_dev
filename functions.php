@@ -51,8 +51,11 @@ function theme_enqueue_styles()
     'common-style' => get_template_directory_uri() . '/assets/css/common.css',
   );
 
-  if (is_front_page() || is_home()) {
+  if (is_front_page()) {
     $styles['top-style'] = get_template_directory_uri() . '/assets/css/top.css';
+  }
+  if (is_home()) {
+    $styles['page-archive-cast-style'] = get_template_directory_uri() . '/assets/css/page-archive-cast.css';
   }
   if (is_singular('post')) {
     $styles['single-style'] = get_template_directory_uri() . '/assets/css/single.css';
@@ -63,15 +66,15 @@ function theme_enqueue_styles()
   if (is_page('recruit')) {
     $styles['page-recruit-style'] = get_template_directory_uri() . '/assets/css/page-recruit.css';
   }
+  if (is_page('drink-menu')) {
+    $styles['page-drink-menu-style'] = get_template_directory_uri() . '/assets/css/page-drink-menu.css';
+  }
   if (is_page('archive-blog')) {
     $styles['page-archive-blog-style'] = get_template_directory_uri() . '/assets/css/page-archive-blog.css';
   }
-  if (is_page('archive-cast')) {
-    $styles['page-archive-cast-style'] = get_template_directory_uri() . '/assets/css/page-archive-cast.css';
-  }
-  if (is_page('menu')) {
-    $styles['page-menu-style'] = get_template_directory_uri() . '/assets/css/page-menu.css';
-  }
+  // if (is_page('archive-cast')) {
+  //   $styles['page-archive-cast-style'] = get_template_directory_uri() . '/assets/css/page-archive-cast.css';
+  // }
 
   foreach ($styles as $id => $url) {
     wp_enqueue_style($id, $url);
@@ -96,7 +99,7 @@ function create_post_type()
     array(
       'label' => 'キャスト',
       'public' => true,
-      'has_archive' => true,
+      'has_archive' => false,
       'show_in_rest' => true,
       'menu_position' => 5,
       'supports' => array(
