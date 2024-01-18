@@ -9,14 +9,19 @@ function setup_theme()
 }
 add_action('after_setup_theme', 'setup_theme');
 
-function set_default_thumbnail_image($html)
+// defaultのサムネイル画像
+function set_default_thumbnail_image($html, $post_id)
 {
   if ("" === $html) {
-    $html = '<img src="' . get_template_directory_uri() . '/assets/img/logo.png" alt="デフォルトのアイキャッチ画像" />';
+    if (has_category('cast', $post_id)) {
+      $html = '<img src="' . get_template_directory_uri() . '/assets/img/firstview_img.png" alt="デフォルトのカテゴリー1画像" />';
+    } else {
+      $html = '<img src="' . get_template_directory_uri() . '/assets/img/logo.png" alt="デフォルトのカテゴリー2画像" />';
+    }
   }
   return $html;
 }
-add_filter('post_thumbnail_html', 'set_default_thumbnail_image');
+add_filter('post_thumbnail_html', 'set_default_thumbnail_image', 10, 2);
 
 // fontsの読み込みパフォーマンス向上
 function theme_resource_hints($urls, $relation_type)
@@ -46,10 +51,13 @@ function theme_enqueue_styles()
     'common-style' => get_template_directory_uri() . '/assets/css/common.css',
   );
 
-  if (is_front_page() || is_home()) {
+  if (is_front_page()) {
     $styles['top-style'] = get_template_directory_uri() . '/assets/css/top.css';
   }
-  if (is_singular('')) {
+  if (is_home()) {
+    $styles['page-archive-cast-style'] = get_template_directory_uri() . '/assets/css/page-archive-cast.css';
+  }
+  if (is_singular('post')) {
     $styles['single-style'] = get_template_directory_uri() . '/assets/css/single.css';
   }
   if (is_singular('cast')) {
@@ -58,15 +66,15 @@ function theme_enqueue_styles()
   if (is_page('recruit')) {
     $styles['page-recruit-style'] = get_template_directory_uri() . '/assets/css/page-recruit.css';
   }
+  if (is_page('drink-menu')) {
+    $styles['page-drink-menu-style'] = get_template_directory_uri() . '/assets/css/page-drink-menu.css';
+  }
   if (is_page('archive-blog')) {
     $styles['page-archive-blog-style'] = get_template_directory_uri() . '/assets/css/page-archive-blog.css';
   }
-  if (is_page('archive-cast')) {
-    $styles['page-archive-cast-style'] = get_template_directory_uri() . '/assets/css/page-archive-cast.css';
-  }
-  if (is_page('menu')) {
-    $styles['page-menu-style'] = get_template_directory_uri() . '/assets/css/page-menu.css';
-  }
+  // if (is_page('archive-cast')) {
+  //   $styles['page-archive-cast-style'] = get_template_directory_uri() . '/assets/css/page-archive-cast.css';
+  // }
 
   foreach ($styles as $id => $url) {
     wp_enqueue_style($id, $url);
@@ -82,7 +90,7 @@ function theme_enqueue_scripts()
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
 
-// カスタム投稿タイプ
+// カスタム投稿タイプ cast
 add_action('init', 'create_post_type');
 function create_post_type()
 {
@@ -91,7 +99,7 @@ function create_post_type()
     array(
       'label' => 'キャスト',
       'public' => true,
-      'has_archive' => true,
+      'has_archive' => false,
       'show_in_rest' => true,
       'menu_position' => 5,
       'supports' => array(
@@ -103,6 +111,28 @@ function create_post_type()
       ),
     )
   );
+}
+
+// カスタム投稿タイプ cast のパーマリンクカスタマイズ
+add_filter('post_type_link', 'custom_post_link', 1, 2);
+function custom_post_link($link, $post)
+{
+  if ($post->post_type === 'cast') {
+    // カスタム投稿名が"cast"の投稿のパーマリンクを「/cast/投稿ID/」の形に書き換え
+    return home_url('/cast/' . $post->ID);
+  } else {
+    return $link;
+  }
+}
+
+//書き換えたパーマリンクに対応したリライトルールを追加
+add_filter('rewrite_rules_array', 'custom_post_link_rewrite');
+function custom_post_link_rewrite($rules)
+{
+  $rewrite_rules = array(
+    'cast/([0-9]+)/?$' => 'index.php?post_type=cast&p=$matches[1]',
+  );
+  return $rewrite_rules + $rules;
 }
 
 // Contact Form 7で自動挿入されるPタグ、brタグを削除

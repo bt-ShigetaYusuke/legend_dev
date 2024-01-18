@@ -62,7 +62,7 @@
         <li class="header__nav__item"><a href="<?= home_url('/#cast') ?>" class="header__nav__item__link">キャスト</a></li>
         <li class="header__nav__item"><a href="<?= home_url('/#fee-system') ?>" class="header__nav__item__link">料金システム</a></li>
         <li class="header__nav__item"><a href="<?= home_url('/#access') ?>" class="header__nav__item__link">店舗情報・アクセス</a></li>
-        <li class="header__nav__item"><a href="<?= home_url('/recruit') ?>" class="header__nav__item__link">求人情報</a></li>
+        <li class="header__nav__item"><a href="<?= home_url('/recruit?param=counter-lady') ?>" class="header__nav__item__link">求人情報</a></li>
         <li class="header__nav__item"><a href="<?= home_url('/#cast-blog') ?>" class="header__nav__item__link">キャストブログ</a></li>
       </ul>
       <ul class="header__nav__contact__info__list">

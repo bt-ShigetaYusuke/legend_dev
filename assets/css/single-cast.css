@@ -1,0 +1,140 @@
+/* #swiper */
+.swiper__container {
+  position: relative;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-slide {
+  transition-timing-function: linear;
+  display: block;
+  width: 54.8rem !important;
+  height: auto;
+  background: inherit;
+  text-align: center;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: var(--swiper-pagination-bottom, -0.6rem);
+  top: var(--swiper-pagination-top, auto);
+  left: 0;
+  width: 100%;
+}
+
+.swiper-pagination-bullet {
+  width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 1.5rem));
+  height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 1.5rem));
+  display: inline-block;
+  border-radius: var(--swiper-pagination-bullet-border-radius, 50%);
+  background: var(--swiper-pagination-bullet-inactive-color, #696d76);
+  opacity: var(--swiper-pagination-bullet-inactive-opacity, 1);
+}
+
+.swiper-pagination-bullet-active {
+  opacity: var(--swiper-pagination-bullet-opacity, 1);
+  background: #309dd6;
+}
+
+/* #single-cast */
+.single__cast__link {
+  text-align: right;
+}
+
+/* #cast */
+.cast__name {
+  font-weight: bold;
+  font-size: 6rem;
+  text-align: center;
+}
+
+.cast__list.grid__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 2.2rem;
+  column-gap: 6.7rem;
+}
+
+.cast__item.grid__item:last-child {
+  grid-column: 1/3;
+}
+
+.cast__item__title {
+  color: #33bbff;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.cast__item__text {
+  font-size: 2.4rem;
+}
+
+/* #cast-blog */
+.cast__blog {
+  margin: 4rem auto 0;
+}
+
+.cast__blog__title {
+}
+
+.cast__blog__list {
+  margin: 2rem auto 0;
+}
+
+.cast__blog__item {
+}
+.cast__blog__item:nth-child(n + 2) {
+}
+
+.cast__blog__item__link {
+  height: 21.2rem;
+  border-bottom: dotted 1px #fff;
+  padding: 1.9rem 0;
+}
+.cast__blog__item__link.grid__container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 15rem auto;
+  column-gap: 1.8rem;
+}
+
+.cast__blog__item__title {
+  color: #33bbff;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.cast__blog__item__content,
+.cast__blog__item__author {
+  font-size: 2.4rem;
+}
+
+.cast__blog__item__content {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0.5rem 0 0;
+}
+
+.cast__blog__item__author {
+  margin: 0.7rem 0 0;
+  text-align: right;
+}
+
+.cast__blog__button {
+  width: 48rem;
+  margin: -2rem auto 0;
+}
+
+.cast__blog__error {
+  color: yello;
+  font-size: 2rem;
+}
