@@ -10,6 +10,10 @@
   margin-right: auto;
 }
 
+.swiper-wrapper{
+  justify-content: center;
+}
+
 .swiper-slide {
   transition-timing-function: linear;
   display: block;

@@ -4,8 +4,26 @@
   <article class="post__article">
     <?php if (have_posts()) : ?>
       <?php while (have_posts()) :
-        the_post(); ?>
-        <?php the_post_thumbnail(); ?>
+        the_post();
+
+        $author_id = get_the_author_meta('ID');
+        $args = array(
+          'post_type'     => 'cast',
+          'author'        =>  $author_id,
+          'orderby'       =>  'post_date',
+          'order'         =>  'DESC',
+          'posts_per_page' => 1,
+        );
+
+        $current_user_posts = get_posts($args);
+      ?>
+        <div>
+          <?php if (has_post_thumbnail()) : ?>
+            <?php the_post_thumbnail(); ?>
+          <?php elseif ($current_user_posts) : ?>
+            <?php echo get_the_post_thumbnail($current_user_posts[0]->ID, 'thumbnail', ['class' => '', 'alt' => '']); ?>
+          <?php endif; ?>
+        </div>
         <h2>
           <?php the_title(); ?>
         </h2>

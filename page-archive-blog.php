@@ -40,10 +40,10 @@ $the_query = new WP_Query($args);
           <a href="<?php the_permalink(); ?>" class="cast__blog__item__link grid__container">
             <div class="grid__item">
               <div class="cast__blog__item__img">
-                <?php if ($current_user_posts) : ?>
-                  <?php echo get_the_post_thumbnail($current_user_posts[0]->ID, 'thumbnail', ['class' => '', 'alt' => '']); ?>
-                <?php else : ?>
+                <?php if (has_post_thumbnail()) : ?>
                   <?php the_post_thumbnail(); ?>
+                <?php elseif ($current_user_posts) : ?>
+                  <?php echo get_the_post_thumbnail($current_user_posts[0]->ID, 'thumbnail', ['class' => '', 'alt' => '']); ?>
                 <?php endif; ?>
               </div>
             </div>
