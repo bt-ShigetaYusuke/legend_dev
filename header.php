@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <header class="header">
+  <header id="header" class="header">
     <div class="header__list__container grid__container">
       <div id="header-hamburger" class="header__hamburger grid__item">
         <span></span>
@@ -21,7 +21,7 @@
       </div>
       <ul class="header__contact__list grid__item grid__container">
         <li class="header__contact__item">
-          <a href="<?= MAP_URL_LEGEND ?>" class="header__contact__item__link">
+          <a href="<?= MAP_URL_LEGEND ?>" target="_blank" class="header__contact__item__link">
             <i class="fa-solid fa-location-dot"></i>
           </a>
         </li>
@@ -32,7 +32,9 @@
         </li>
       </ul>
       <h1 class="header__logo">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/header_logo.png" alt="Legend">
+        <a href="<?= home_url() ?>" class="header__logo__link">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/header_logo.png" alt="Legend">
+        </a>
       </h1>
       <ul class="header__sns__list grid__item grid__container">
         <li class="header__sns__item">
@@ -62,11 +64,11 @@
       </div>
       <ul class="header__nav__list">
         <li class="header__nav__item"><a href="<?= home_url() ?>" class="header__nav__item__link">TOP</a></li>
-        <li class="header__nav__item"><a href="<?= home_url('/#cast') ?>" class="header__nav__item__link">キャスト</a></li>
-        <li class="header__nav__item"><a href="<?= home_url('/#fee-system') ?>" class="header__nav__item__link">料金システム</a></li>
-        <li class="header__nav__item"><a href="<?= home_url('/#access') ?>" class="header__nav__item__link">店舗情報・アクセス</a></li>
-        <li class="header__nav__item"><a href="<?= home_url('/recruit?param=counter-lady') ?>" class="header__nav__item__link">求人情報</a></li>
-        <li class="header__nav__item"><a href="<?= home_url('/#cast-blog') ?>" class="header__nav__item__link">キャストブログ</a></li>
+        <li class="header__nav__item"><a href="<?= home_url('#cast') ?>" class="header__nav__item__link">キャスト</a></li>
+        <li class="header__nav__item"><a href="<?= home_url('#fee-system') ?>" class="header__nav__item__link">料金システム</a></li>
+        <li class="header__nav__item"><a href="<?= home_url('#access') ?>" class="header__nav__item__link">店舗情報・アクセス</a></li>
+        <li class="header__nav__item"><a href="<?= home_url('recruit?param=counter-lady') ?>" class="header__nav__item__link">求人情報</a></li>
+        <li class="header__nav__item"><a href="<?= home_url('#cast-blog') ?>" class="header__nav__item__link">キャストブログ</a></li>
       </ul>
       <ul class="header__nav__contact__info__list">
         <li class="header__nav__contact__info__item">
@@ -95,7 +97,7 @@
       <div class="header__nav__list__container flex__container">
         <ul class="header__nav__contact__list flex__item grid__container">
           <li class="header__nav__contact__item grid__item">
-            <a href="<?= MAP_URL_LEGEND ?>" class="header__nav__contact__item__link">
+            <a href="<?= MAP_URL_LEGEND ?>" target="_blank" class="header__nav__contact__item__link">
               <i class="fa-solid fa-location-dot"></i>
             </a>
           </li>

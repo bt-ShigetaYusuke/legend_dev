@@ -18,7 +18,7 @@ for ($i = 1; $i <= 10; $i++) {
   <p class="cast__link__text">他のキャストを見る</p>
 </a>
 
-<article id="cast" class="cast">
+<article class="cast">
   <?php while (have_posts()) :
     the_post(); ?>
     <div class="cast__name">
@@ -85,7 +85,7 @@ $args = array(
 $wp_query = new WP_Query($args);
 ?>
 
-<article id="cast-blog" class="cast__blog">
+<article class="cast__blog">
   <h2 class="cast__blog__title">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/single-cast/cast_blog_title.png" alt="このキャストのブログ">
   </h2>
@@ -98,28 +98,12 @@ $wp_query = new WP_Query($args);
         $title = wp_trim_words(get_the_title(), 18, '…');
         $content = get_the_content('', false, '');
         $content = wp_strip_all_tags($content);
-
-        // アイキャッチ画像設定
-        $author_id = get_the_author_meta('ID');
-        $args = array(
-          'post_type'     => 'cast',
-          'author'        =>  $author_id,
-          'orderby'       =>  'post_date',
-          'order'         =>  'DESC',
-          'posts_per_page' => 1,
-        );
-
-        $current_user_posts = get_posts($args);
       ?>
         <li class="cast__blog__item">
           <a href="<?php the_permalink(); ?>" class="cast__blog__item__link grid__container">
             <div class="grid__item">
               <div class="cast__blog__item__img">
-                <?php if (has_post_thumbnail()) : ?>
-                  <?php the_post_thumbnail(); ?>
-                <?php elseif ($current_user_posts) : ?>
-                  <?php echo get_the_post_thumbnail($current_user_posts[0]->ID, 'thumbnail', ['class' => '', 'alt' => '']); ?>
-                <?php endif; ?>
+                <?php the_post_thumbnail(); ?>
               </div>
             </div>
             <div class="grid__item">

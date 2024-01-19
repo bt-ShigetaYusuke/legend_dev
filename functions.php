@@ -1,5 +1,5 @@
 <?php
-const MAP_URL_LEGEND = 'https://maps.app.goo.gl/jQjrPJ1rKmGc8FqVA';
+const MAP_URL_LEGEND = 'https://www.google.com/maps/place/%E3%80%92183-0055+%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%B8%AD%E5%B8%82%E5%BA%9C%E4%B8%AD%E7%94%BA%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%96%E2%88%92%EF%BC%91+%E5%8F%A4%E6%B2%A2%E3%83%93%E3%83%AB/@35.6725208,139.4807786,18.55z/data=!4m6!3m5!1s0x6018e4fb49659f27:0xb8a358616054c535!8m2!3d35.6723727!4d139.4811455!16s%2Fg%2F12hxf5hh8?hl=ja&entry=ttu';
 const MAP_URL_JEWEL = 'https://maps.app.goo.gl/RtSB5ZzmueuktVw9A';
 
 // アイキャッチ画像
@@ -15,9 +15,9 @@ function set_default_thumbnail_image($html, $post_id)
 {
   if ("" === $html) {
     if (has_category('cast', $post_id)) {
-      $html = '<img src="' . get_template_directory_uri() . '/assets/img/firstview_img.png" alt="デフォルトのカテゴリー1画像" />';
+      $html = '<img src="' . get_template_directory_uri() . '/assets/img/defalt_post_cast.png" alt="" />';
     } else {
-      $html = '<img src="' . get_template_directory_uri() . '/assets/img/logo.png" alt="デフォルトのカテゴリー2画像" />';
+      $html = '<img src="' . get_template_directory_uri() . '/assets/img/logo.png" alt="" />';
     }
   }
   return $html;
@@ -73,9 +73,6 @@ function theme_enqueue_styles()
   if (is_page('archive-blog')) {
     $styles['page-archive-blog-style'] = get_template_directory_uri() . '/assets/css/page-archive-blog.css';
   }
-  // if (is_page('archive-cast')) {
-  //   $styles['page-archive-cast-style'] = get_template_directory_uri() . '/assets/css/page-archive-cast.css';
-  // }
 
   foreach ($styles as $id => $url) {
     wp_enqueue_style($id, $url);

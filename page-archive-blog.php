@@ -22,29 +22,12 @@ $the_query = new WP_Query($args);
         $title = wp_trim_words(get_the_title(), 18, '…');
         $content = get_the_content('', false, '');
         $content = wp_strip_all_tags($content);
-
-        // アイキャッチ画像設定
-        $author_id = get_the_author_meta('ID');
-        $args = array(
-          'post_type'     => 'cast',
-          'author'        =>  $author_id,
-          'orderby'       =>  'post_date',
-          'order'         =>  'DESC',
-          'posts_per_page' => 1,
-        );
-
-        $current_user_posts = get_posts($args);
-
       ?>
         <li class="cast__blog__item grid__item">
           <a href="<?php the_permalink(); ?>" class="cast__blog__item__link grid__container">
             <div class="grid__item">
               <div class="cast__blog__item__img">
-                <?php if (has_post_thumbnail()) : ?>
-                  <?php the_post_thumbnail(); ?>
-                <?php elseif ($current_user_posts) : ?>
-                  <?php echo get_the_post_thumbnail($current_user_posts[0]->ID, 'thumbnail', ['class' => '', 'alt' => '']); ?>
-                <?php endif; ?>
+                <?php the_post_thumbnail(); ?>
               </div>
             </div>
             <div class="grid__item">
