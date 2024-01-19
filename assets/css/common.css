@@ -243,6 +243,8 @@ img {
 
 .header__nav__contact__info__list {
   position: relative;
+  padding: 0 0 4.7rem;
+  margin: 4.5rem auto 0;
   font-weight: bold;
   font-size: 3rem;
 }
@@ -256,6 +258,10 @@ img {
   border-bottom: solid 2px #c9c9c9;
 }
 
+.header__nav__contact__info__item:nth-child(n + 2) {
+  margin: 3.4rem 0 0;
+}
+
 .header__nav__contact__info__item__title {
   color: #33bbff;
 }
@@ -267,7 +273,7 @@ img {
 .header__nav__list__container {
   position: relative;
   width: 51.4rem;
-  margin: 0 auto;
+  margin: 2rem auto 0;
 }
 .header__nav__list__container.flex__container {
   display: flex;
@@ -302,9 +308,21 @@ img {
   border-left: dotted #333 2px;
 }
 
+.header__nav__contact__item__link,
+.header__nav__sns__item__link {
+  width: 6rem;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #333333;
+  border-radius: 100%;
+}
+
 .header__nav__contact__item__link i,
 .header__nav__sns__item__link i {
-  font-size: 6rem;
+  color: #fff;
+  font-size: 3.2rem;
 }
 
 /* #footer */

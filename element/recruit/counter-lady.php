@@ -13,17 +13,26 @@ $items = range(1, 11);
       </li>
     <?php endforeach; ?>
   </ul>
-  <p class="counterlady__text__top common__width common__jobtype__text__top">
-    お客様とお話をしたりお酒を作ったりしていただきます。<br>
-    普通のキャバクラと同じです。<br>
-    <span class="--asterisk">※お触りやキス等など一切ありません！</span>
-  </p>
   <ul class="counterlady__workingstyle__list common__width common__jobtype__workingstyle__list">
+    <li class="counterlady__workingstyle__item common__jobtype__workingstyle__item">
+      <h3 class="counterlady__workingstyle__item__title common__jobtype__workingstyle__item__title">募集職種</h3>
+      <p class="counterlady__workingstyle__item__text common__jobtype__workingstyle__item__text">
+        カウンターレディー
+      </p>
+    </li>
+    <li class="counterlady__workingstyle__item common__jobtype__workingstyle__item">
+      <h3 class="counterlady__workingstyle__item__title common__jobtype__workingstyle__item__title">お仕事の内容</h3>
+      <p class="counterlady__workingstyle__item__text common__jobtype__workingstyle__item__text">
+        お客様とお話をしたりお酒を作ったりしていただきます。<br>
+        普通のキャバクラと同じです。<br>
+        <span class="--asterisk">※お触りやキス等など一切ありません！</span>
+      </p>
+    </li>
     <li class="counterlady__workingstyle__item common__jobtype__workingstyle__item">
       <h3 class="counterlady__workingstyle__item__title common__jobtype__workingstyle__item__title">給与</h3>
       <p class="counterlady__workingstyle__item__text common__jobtype__workingstyle__item__text">
         最低時給<span class="--large">3,500</span>円~<br>
-        各種バックと合わせた平均時給は5,500円以上となります!!<br>
+        各種バックと合わせた平均時給は5,500円以上となります！！<br>
         出勤日数や頑張りに応じてどんどん時給はあがります！<br>
         ・指名バックは売り上げの10%<br>
         ・フリーのドリンクバック10%~20%<br>
@@ -54,6 +63,7 @@ $items = range(1, 11);
         <p class="counterlady__workingstyle__item__text grid__item common__jobtype__workingstyle__item__text">・学生歓迎</p>
         <p class="counterlady__workingstyle__item__text grid__item common__jobtype__workingstyle__item__text">・体験入店歓迎</p>
       </div>
+      <p class="counterlady__workingstyle__item__note">※送り範囲は東京全域、埼玉、神奈川（応相談）</p>
     </li>
     <li class="counterlady__workingstyle__item common__jobtype__workingstyle__item">
       <h3 class="counterlady__workingstyle__item__title common__jobtype__workingstyle__item__title">店休日</h3>

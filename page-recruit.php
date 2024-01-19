@@ -21,11 +21,6 @@
       </a>
     </li>
     <li class="recruitmenttype__item grid__item">
-      <a href="<?= home_url('/recruit?param=employee-candidate') ?>" class="recruitmenttype__item__link common__link">
-        <p class="recruitmenttype__item__link__text">社員候補</p>
-      </a>
-    </li>
-    <li class="recruitmenttype__item grid__item">
       <a href="<?= home_url('/recruit?param=feed-driver') ?>" class="recruitmenttype__item__link common__link">
         <p class="recruitmenttype__item__link__text">送りドライバー</p>
       </a>
