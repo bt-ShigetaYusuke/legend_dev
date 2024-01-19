@@ -100,12 +100,13 @@ top_cast_swiper();
 
 // swiper single-castページ
 function single_cast_swiper() {
-  const swiper = new Swiper("#single-cast", {
+  const swiper = new Swiper("#single-cast-swiper", {
     loop: true,
+    loopedSlides: 10,
     speed: 3000,
     allowTouchMove: true,
     slidesPerView: "auto",
-    // centeredSlides: true,
+    centeredSlides: true,
     spaceBetween: 20,
     autoplay: {
       delay: 0,
