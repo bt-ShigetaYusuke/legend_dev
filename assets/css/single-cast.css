@@ -98,6 +98,7 @@
 }
 
 .cast__blog__item__link {
+  overflow: hidden;
   height: 21.2rem;
   border-bottom: dotted 1px #fff;
   padding: 1.9rem 0;
