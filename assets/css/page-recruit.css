@@ -7,7 +7,7 @@
 .common__jobtype__label__list.grid__container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  /* row-gap: 0.3rem; */
+  row-gap: 0.4rem;
   column-gap: 0.4rem;
   margin: -2rem auto 0;
 }
@@ -152,7 +152,7 @@
 
 /* #recruit-form */
 .recruit__form {
-  margin: 7.8rem auto 0;
+  padding: 8.8rem 0 0;
 }
 
 .recruit__form__title {
