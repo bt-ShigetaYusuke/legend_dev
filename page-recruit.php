@@ -5,7 +5,7 @@
 </h2>
 
 <section id="banner" class="banner">
-  <a href="<?= home_url('/recruit') ?>" class="banner__img">
+  <a href="<?= home_url('/recruit?param=counter-lady') ?>" class="banner__img">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/banner_img.png" alt="キャスト募集中">
   </a>
 </section>
@@ -41,7 +41,7 @@ if (isset($_GET['param']) && in_array($_GET['param'], $allowed_params)) {
 }
 ?>
 
-<section class="recruitapply common__section">
+<section class="recruitapply">
   <h2 class="recruitapply__title">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/recruit/recruitapply_title.png" alt="まずはお気軽にお問い合わせください!">
   </h2>
@@ -74,7 +74,5 @@ if (isset($_GET['param']) && in_array($_GET['param'], $allowed_params)) {
   <p class="recruit__form__text__top common__width">以下の応募フォームに必要事項を入力のうえ、ご応募ください。</p>
   <?php get_template_part('element/recruit/form'); ?>
 </section>
-
-
 
 <?php get_footer(); ?>

@@ -2,7 +2,7 @@
 $items = range(1, 11);
 ?>
 
-<section id="counterlady" class="counterlady common__recruit__section">
+<section id="counterlady" class="counterlady common__jobtype">
   <h2 class="counterlady__title common__title">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/recruit/counter-lady/counterlady_title.png" alt="カウンターレディー">
   </h2>
@@ -77,7 +77,12 @@ $items = range(1, 11);
           京王線「府中駅」徒歩1分
         </p>
         <div class="counterlady__workingstyle__item__map">
-          <i class="fa-solid fa-location-dot"></i>map
+          <a href="<?= MAP_URL ?>" class="counterlady__workingstyle__item__map__link common__jobtype__workingstyle__item__map__link">
+            <div class="common__jobtype__workingstyle__item__map__icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <span>map</span>
+          </a>
         </div>
       </div>
     </li>

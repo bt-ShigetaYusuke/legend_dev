@@ -31,6 +31,9 @@
           </a>
         </li>
       </ul>
+      <h1 class="header__logo">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/header_logo.png" alt="Legend">
+      </h1>
       <ul class="header__sns__list grid__item grid__container">
         <li class="header__sns__item">
           <a href="<?= get_sns_line_url() ?>" class="header__sns__item__link">
