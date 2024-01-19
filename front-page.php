@@ -1,12 +1,27 @@
 <?php get_header(); ?>
 
-
+<?php
+// #first-view
+$firstview_images = array();
+for ($i = 1; $i <= 10; $i++) {
+  $firstview_image = get_field('top_firstview_image_' . $i);
+  if ($firstview_image) {
+    $firstview_images[] = $firstview_image;
+  }
+}
+?>
 <section id="first-view" class="firstview">
   <div class="firstview__logo">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="BIKINI GIRLS BAR LEGEND">
   </div>
-  <div class="firstview__img">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/firstview_img.png" alt="">
+  <div id="top-first-view-swiper" class="firstview__swiper swiper">
+    <ul class="firstview__img__list swiper-wrapper">
+      <?php foreach ($firstview_images as $index => $firstview_image) : ?>
+        <li class="firstview__img__item swiper-slide">
+          <img src="<?= $firstview_image; ?>" alt="ファーストビュー<?= $index + 1; ?>">
+        </li>
+      <?php endforeach; ?>
+    </ul>
   </div>
   <div class="firstview__text">
     <p class="firstview__text__01">東京都府中市府中町1-6-1 古沢ビルB1（府中駅 徒歩1分）</p>
@@ -14,12 +29,18 @@
   </div>
 </section>
 
+<?php
+// #banner
+?>
 <section id="banner" class="banner">
   <a href="<?= home_url('/recruit?param=counter-lady') ?>" class="banner__img">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/banner_img.png" alt="キャスト募集中">
   </a>
 </section>
 
+<?php
+// #about
+?>
 <section id="about" class="about">
   <div class="about__text common__width">
     <p class="about__text__01">
@@ -35,6 +56,7 @@
 </section>
 
 <?php
+// #cast
 $args = array(
   'post_type' => 'cast',
   'posts_per_page' => -1,
@@ -42,13 +64,12 @@ $args = array(
 
 $the_query = new WP_Query($args);
 ?>
-
 <section id="cast" class="cast common__section">
   <h2 class="cast__title">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_title.png" alt="キャスト">
   </h2>
   <?php if ($the_query->have_posts()) : ?>
-    <div class="swiper mySwiper">
+    <div id="top-cast-swiper" class="top__cast__swiper swiper">
       <ul class="cast__list swiper-wrapper">
         <?php while ($the_query->have_posts()) :
           $the_query->the_post(); ?>
@@ -72,6 +93,9 @@ $the_query = new WP_Query($args);
   </a>
 </section>
 
+<?php
+// #fee-system
+?>
 <section id="fee-system" class="feesystem common__section">
   <h2 class="feesystem__title">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/feesystem_title.png" alt="料金システム">
@@ -79,7 +103,7 @@ $the_query = new WP_Query($args);
   <div class="feesystem__img">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/feesystem_img_01.png" alt="">
   </div>
-  <table class="feesystem__table common__width">
+  <table class="feesystem__table">
     <thead>
       <tr>
         <th class="feesystem__table__th">サービス</th>
@@ -101,14 +125,14 @@ $the_query = new WP_Query($args);
       </tr>
     </tbody>
   </table>
-  <div class="feesystem__supplement common__section common__width">
+  <div class="feesystem__supplement">
     <p class="feesystem__supplement__01">TAX/SERVICE 20%</p>
     <p class="feesystem__supplement__02">生ビール、ウイスキー、焼酎、サワー、各種カクテル飲み放題</p>
   </div>
-  <a href="<?= home_url('/drink-menu') ?>" class="feesystem__link common__width common__link">
+  <a href="<?= home_url('/drink-menu') ?>" class="feesystem__link common__link">
     <p class="feesystem__link__text">メニューを見る</p>
   </a>
-  <div class="feesystem__asterisk common__width">
+  <div class="feesystem__asterisk">
     <p class="feesystem__asterisk__01">※インボイス制度対応</p>
     <p class="feesystem__asterisk__02">※クレジットカード取扱いあり（クレジットカード手数料はございません）</p>
   </div>
@@ -117,11 +141,14 @@ $the_query = new WP_Query($args);
   </div>
 </section>
 
+<?php
+// #access
+?>
 <section id="access" class="access common__section">
   <h2 class="access__title">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/access_title.png" alt="店舗情報・アクセス">
   </h2>
-  <table class="access__table common__width">
+  <table class="access__table">
     <thead>
       <tr>
         <th class="access__table__th">項目</th>
@@ -130,24 +157,24 @@ $the_query = new WP_Query($args);
     </thead>
     <tbody>
       <tr class="access__table__tr">
-        <td class="access__table__td__01">[店　　名]</td>
-        <td class="access__table__td__02 large">LEGEND　～レジェンド～</td>
+        <th class="access__table__th">[店　　名]</th>
+        <td class="access__table__td large">LEGEND　～レジェンド～</td>
       </tr>
       <tr class="access__table__tr">
-        <td class="access__table__td__01">[住　　所]</td>
-        <td class="access__table__td__02">東京都府中市府中町1-6-1 古沢ビルB1</td>
+        <th class="access__table__th">[住　　所]</th>
+        <td class="access__table__td">東京都府中市府中町1-6-1 古沢ビルB1</td>
       </tr>
       <tr class="access__table__tr">
-        <td class="access__table__td__01">[営業時間]</td>
-        <td class="access__table__td__02"><?= get_business_hours_range() ?></td>
+        <th class="access__table__th">[営業時間]</th>
+        <td class="access__table__td"><?= get_business_hours_range() ?></td>
       </tr>
       <tr class="access__table__tr">
-        <td class="access__table__td__01">[電話番号]</td>
-        <td class="access__table__td__02">090-0000-0000</td>
+        <th class="access__table__th">[電話番号]</th>
+        <td class="access__table__td">090-0000-0000</td>
       </tr>
       <tr class="access__table__tr">
-        <td class="access__table__td__01">[最寄り駅]</td>
-        <td class="access__table__td__02">京王線「府中駅」 徒歩１分</td>
+        <th class="access__table__th">[最寄り駅]</th>
+        <td class="access__table__td">京王線「府中駅」 徒歩１分</td>
       </tr>
     </tbody>
   </table>
@@ -189,6 +216,7 @@ $the_query = new WP_Query($args);
 </section>
 
 <?php
+// #cast-blog
 $args = array(
   'post_type' => 'post',
   // 'category_name' => 'cast',
@@ -197,7 +225,6 @@ $args = array(
 
 $the_query = new WP_Query($args);
 ?>
-
 <section id="cast-blog" class="cast__blog common__section">
   <h2 class="cast__blog__title">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_blog_title.png" alt="キャスト ブログ">
@@ -220,9 +247,7 @@ $the_query = new WP_Query($args);
           'order'         =>  'DESC',
           'posts_per_page' => 1,
         );
-
         $current_user_posts = get_posts($args);
-
       ?>
         <li class="cast__blog__item">
           <a href="<?php the_permalink(); ?>" class="cast__blog__item__link grid__container">
