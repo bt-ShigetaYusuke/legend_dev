@@ -21,7 +21,7 @@
       </div>
       <ul class="header__contact__list grid__item grid__container">
         <li class="header__contact__item">
-          <a href="<?= MAP_URL ?>" class="header__contact__item__link">
+          <a href="<?= MAP_URL_LEGEND ?>" class="header__contact__item__link">
             <i class="fa-solid fa-location-dot"></i>
           </a>
         </li>
@@ -95,7 +95,7 @@
       <div class="header__nav__list__container flex__container">
         <ul class="header__nav__contact__list flex__item grid__container">
           <li class="header__nav__contact__item grid__item">
-            <a href="<?= MAP_URL ?>" class="header__nav__contact__item__link">
+            <a href="<?= MAP_URL_LEGEND ?>" class="header__nav__contact__item__link">
               <i class="fa-solid fa-location-dot"></i>
             </a>
           </li>

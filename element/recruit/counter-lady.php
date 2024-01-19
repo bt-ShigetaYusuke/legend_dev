@@ -77,7 +77,7 @@ $items = range(1, 11);
           京王線「府中駅」徒歩1分
         </p>
         <div class="counterlady__workingstyle__item__map">
-          <a href="<?= MAP_URL ?>" class="counterlady__workingstyle__item__map__link common__jobtype__workingstyle__item__map__link">
+          <a href="<?= MAP_URL_LEGEND ?>" class="counterlady__workingstyle__item__map__link common__jobtype__workingstyle__item__map__link">
             <div class="common__jobtype__workingstyle__item__map__icon">
               <i class="fa-solid fa-location-dot"></i>
             </div>

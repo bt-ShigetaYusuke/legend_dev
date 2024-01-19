@@ -277,3 +277,27 @@
   transform: rotate(45deg);
   margin: 0 0 0 0.4rem;
 }
+
+/* #feed-driver */
+.feeddriver__workingstyle__list {
+  margin: 2rem auto 0;
+}
+
+.feeddriver__workingstyle__item.__location .grid__container {
+  grid-template-columns: auto 13rem;
+}
+.feeddriver__workingstyle__item.__location .grid__container:nth-child(n + 2) {
+  margin: 2rem auto 0;
+}
+
+/* #waiter */
+.waiter__workingstyle__list {
+  margin: 2rem auto 0;
+}
+
+.waiter__workingstyle__item.__location .grid__container {
+  grid-template-columns: auto 13rem;
+}
+.waiter__workingstyle__item.__location .grid__container:nth-child(n + 2) {
+  margin: 2rem auto 0;
+}

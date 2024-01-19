@@ -3,15 +3,15 @@
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/recruit/waiter/waiter_title.png" alt="ウェイター">
   </h2>
   <ul class="waiter__workingstyle__list common__width common__jobtype__workingstyle__list">
-    <li class="counterlady__workingstyle__item common__jobtype__workingstyle__item">
-      <h3 class="counterlady__workingstyle__item__title common__jobtype__workingstyle__item__title">募集職種</h3>
-      <p class="counterlady__workingstyle__item__text common__jobtype__workingstyle__item__text">
+    <li class="waiter__workingstyle__item common__jobtype__workingstyle__item">
+      <h3 class="waiter__workingstyle__item__title common__jobtype__workingstyle__item__title">募集職種</h3>
+      <p class="waiter__workingstyle__item__text common__jobtype__workingstyle__item__text">
         ウェイター・ウェイトレス
       </p>
     </li>
-    <li class="counterlady__workingstyle__item common__jobtype__workingstyle__item">
-      <h3 class="counterlady__workingstyle__item__title common__jobtype__workingstyle__item__title">お仕事の内容</h3>
-      <p class="counterlady__workingstyle__item__text common__jobtype__workingstyle__item__text">
+    <li class="waiter__workingstyle__item common__jobtype__workingstyle__item">
+      <h3 class="waiter__workingstyle__item__title common__jobtype__workingstyle__item__title">お仕事の内容</h3>
+      <p class="waiter__workingstyle__item__text common__jobtype__workingstyle__item__text">
         ホール業務のサポートをお任せします。
       </p>
     </li>
@@ -54,7 +54,12 @@
           京王線「府中駅」徒歩1分
         </p>
         <div class="waiter__workingstyle__item__map">
-          <i class="fa-solid fa-location-dot"></i>map
+          <a href="<?= MAP_URL_LEGEND ?>" class="waiter__workingstyle__item__map__link common__jobtype__workingstyle__item__map__link">
+            <div class="common__jobtype__workingstyle__item__map__icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <span>map</span>
+          </a>
         </div>
       </div>
       <div class="grid__container">
@@ -63,7 +68,12 @@
           アクセス：京王線「調布駅」 徒歩３分
         </p>
         <div class="waiter__workingstyle__item__map">
-          <i class="fa-solid fa-location-dot"></i>map
+          <a href="<?= MAP_URL_JEWEL ?>" class="waiter__workingstyle__item__map__link common__jobtype__workingstyle__item__map__link">
+            <div class="common__jobtype__workingstyle__item__map__icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <span>map</span>
+          </a>
         </div>
       </div>
     </li>

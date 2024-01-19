@@ -3,15 +3,15 @@
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/recruit/feed-driver/feeddriver_title.png" alt="送りドライバー">
   </h2>
   <ul class="feeddriver__workingstyle__list common__width common__jobtype__workingstyle__list">
-    <li class="counterlady__workingstyle__item common__jobtype__workingstyle__item">
-      <h3 class="counterlady__workingstyle__item__title common__jobtype__workingstyle__item__title">募集職種</h3>
-      <p class="counterlady__workingstyle__item__text common__jobtype__workingstyle__item__text">
+    <li class="feeddriver__workingstyle__item common__jobtype__workingstyle__item">
+      <h3 class="feeddriver__workingstyle__item__title common__jobtype__workingstyle__item__title">募集職種</h3>
+      <p class="feeddriver__workingstyle__item__text common__jobtype__workingstyle__item__text">
         送りドライバー
       </p>
     </li>
-    <li class="counterlady__workingstyle__item common__jobtype__workingstyle__item">
-      <h3 class="counterlady__workingstyle__item__title common__jobtype__workingstyle__item__title">お仕事の内容</h3>
-      <p class="counterlady__workingstyle__item__text common__jobtype__workingstyle__item__text">
+    <li class="feeddriver__workingstyle__item common__jobtype__workingstyle__item">
+      <h3 class="feeddriver__workingstyle__item__title common__jobtype__workingstyle__item__title">お仕事の内容</h3>
+      <p class="feeddriver__workingstyle__item__text common__jobtype__workingstyle__item__text">
         営業終了後、キャストやスタッフを安全に家まで送るお仕事です。
       </p>
     </li>
@@ -48,16 +48,26 @@
           京王線「府中駅」徒歩1分
         </p>
         <div class="feeddriver__workingstyle__item__map">
-          <i class="fa-solid fa-location-dot"></i>map
+          <a href="<?= MAP_URL_LEGEND ?>" class="feeddriver__workingstyle__item__map__link common__jobtype__workingstyle__item__map__link">
+            <div class="common__jobtype__workingstyle__item__map__icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <span>map</span>
+          </a>
         </div>
       </div>
       <div class="grid__container">
         <p class="feeddriver__workingstyle__item__text common__jobtype__workingstyle__item__text">
-          東京都調布市布田１丁目４９−２７ 太陽ビル 1F
+          東京都調布市布田１丁目４９−２７ 太陽ビル 1F<br>
           アクセス：京王線「調布駅」 徒歩３分
         </p>
         <div class="feeddriver__workingstyle__item__map">
-          <i class="fa-solid fa-location-dot"></i>map
+          <a href="<?= MAP_URL_JEWEL ?>" class="feeddriver__workingstyle__item__map__link common__jobtype__workingstyle__item__map__link">
+            <div class="common__jobtype__workingstyle__item__map__icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <span>map</span>
+          </a>
         </div>
       </div>
     </li>
