@@ -1,7 +1,3 @@
-img {
-  margin: 3rem 0;
-}
-
 h2 {
   color: #33bbff;
   font-weight: bold;
@@ -15,4 +11,8 @@ p {
 .post__article__author__name {
   margin: 3rem 0 4rem;
   text-align: right;
+}
+
+.post img {
+  margin: 3rem 0;
 }

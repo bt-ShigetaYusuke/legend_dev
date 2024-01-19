@@ -1,5 +1,6 @@
 <?php
-const MAP_URL = 'https://maps.app.goo.gl/jQjrPJ1rKmGc8FqVA';
+const MAP_URL_LEGEND = 'https://maps.app.goo.gl/jQjrPJ1rKmGc8FqVA';
+const MAP_URL_JEWEL = 'https://maps.app.goo.gl/RtSB5ZzmueuktVw9A';
 
 // アイキャッチ画像
 function setup_theme()

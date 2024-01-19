@@ -11,7 +11,7 @@ for ($i = 1; $i <= 10; $i++) {
 <?php get_header(); ?>
 
 <h2 class="single__cast__title">
-  <img src="<?= get_template_directory_uri() ?>/assets/img/single-cast/single_title.png" alt="キャスト紹介">
+  <img src="<?= get_template_directory_uri() ?>/assets/img/single-cast/single_cast_title.png" alt="キャスト紹介">
 </h2>
 
 <a href="<?= home_url('/archive-cast') ?>" class="single__cast__link common__width common__link">
@@ -25,7 +25,7 @@ for ($i = 1; $i <= 10; $i++) {
       <?php the_field('cast_name'); ?>
     </div>
     <div class="swiper__container">
-      <div id="single-cast" class="swiper single_cast">
+      <div id="single-cast-swiper" class="swiper single_cast">
         <ul class="cast__img__list swiper-wrapper">
           <?php foreach ($cast_images as $index => $cast_img) : ?>
             <li class="cast__img__item swiper-slide">
@@ -86,6 +86,9 @@ $wp_query = new WP_Query($args);
 ?>
 
 <article id="cast-blog" class="cast__blog">
+  <h2 class="cast__blog__title">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/single-cast/cast_blog_title.png" alt="このキャストのブログ">
+  </h2>
   <ul class="cast__blog__list common__width">
     <?php if ($wp_query->have_posts()) : ?>
       <?php while ($wp_query->have_posts()) :
