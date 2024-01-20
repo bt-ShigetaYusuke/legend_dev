@@ -48,7 +48,7 @@
           京王線「府中駅」徒歩1分
         </p>
         <div class="feeddriver__workingstyle__item__map">
-          <a href="<?= MAP_URL_LEGEND ?>" class="feeddriver__workingstyle__item__map__link common__jobtype__workingstyle__item__map__link">
+          <a href="<?= MAP_URL_LEGEND ?>" target="_blank" class="feeddriver__workingstyle__item__map__link common__jobtype__workingstyle__item__map__link">
             <div class="common__jobtype__workingstyle__item__map__icon">
               <i class="fa-solid fa-location-dot"></i>
             </div>
@@ -62,7 +62,7 @@
           アクセス：京王線「調布駅」 徒歩３分
         </p>
         <div class="feeddriver__workingstyle__item__map">
-          <a href="<?= MAP_URL_JEWEL ?>" class="feeddriver__workingstyle__item__map__link common__jobtype__workingstyle__item__map__link">
+          <a href="<?= MAP_URL_JEWEL ?>" target="_blank" class="feeddriver__workingstyle__item__map__link common__jobtype__workingstyle__item__map__link">
             <div class="common__jobtype__workingstyle__item__map__icon">
               <i class="fa-solid fa-location-dot"></i>
             </div>

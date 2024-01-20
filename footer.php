@@ -2,7 +2,7 @@
   <div class="footer__list__container flex__container">
     <ul class="footer__contact__list flex__item grid__container">
       <li class="footer__contact__item grid__item">
-        <a href="<?= MAP_URL_LEGEND ?>" class="footer__contact__item__link">
+        <a href="<?= MAP_URL_LEGEND ?>" target="_blank" class="footer__contact__item__link">
           <i class="fa-solid fa-location-dot"></i>
         </a>
       </li>
