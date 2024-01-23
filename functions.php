@@ -6,7 +6,7 @@ const MAP_URL_JEWEL = 'https://maps.app.goo.gl/RtSB5ZzmueuktVw9A';
 function setup_theme()
 {
   add_theme_support('post-thumbnails');
-  // set_post_thumbnail(500, 500, true);
+  set_post_thumbnail_size(500, 500, true);
 }
 add_action('after_setup_theme', 'setup_theme');
 
@@ -23,6 +23,22 @@ function set_default_thumbnail_image($html, $post_id)
   return $html;
 }
 add_filter('post_thumbnail_html', 'set_default_thumbnail_image', 10, 2);
+
+// 画像遅延読み込み
+// function add_lazyload($content)
+// {
+//   $dom = new DOMDocument();
+//   libxml_use_internal_errors(true);
+//   $dom->loadHTML(mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8'));
+//   libxml_clear_errors();
+//   $images = $dom->getElementsByTagName('img');
+//   foreach ($images as $image) {
+//     $image->setAttribute('loading', 'lazy');
+//   }
+//   $html = $dom->saveHTML();
+//   return $html;
+// }
+// add_filter('the_content', 'add_lazyload');
 
 // fontsの読み込みパフォーマンス向上
 function theme_resource_hints($urls, $relation_type)

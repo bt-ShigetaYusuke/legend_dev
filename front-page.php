@@ -12,13 +12,13 @@ for ($i = 1; $i <= 10; $i++) {
 ?>
 <section id="first-view" class="firstview">
   <div class="firstview__logo">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="BIKINI GIRLS BAR LEGEND">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="BIKINI GIRLS BAR LEGEND" width="375" height="170">
   </div>
   <div id="top-first-view-swiper" class="firstview__swiper swiper">
     <ul class="firstview__img__list swiper-wrapper">
       <?php foreach ($firstview_images as $index => $firstview_image) : ?>
         <li class="firstview__img__item swiper-slide">
-          <img src="<?= $firstview_image; ?>" alt="ファーストビュー<?= $index + 1; ?>">
+          <img src="<?= $firstview_image; ?>" alt="ファーストビュー<?= $index + 1; ?>" width="375" height="290">
         </li>
       <?php endforeach; ?>
     </ul>
@@ -34,7 +34,7 @@ for ($i = 1; $i <= 10; $i++) {
 ?>
 <section id="banner" class="banner">
   <a href="<?= home_url('/recruit?param=counter-lady') ?>" class="banner__img">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/banner_img.png" alt="キャスト募集中">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/banner_img.png" alt="キャスト募集中" width="375" height="153" loading="lazy">
   </a>
 </section>
 
@@ -50,7 +50,7 @@ for ($i = 1; $i <= 10; $i++) {
       店内は広く落ち着いた雰囲気で、女の子たちのセクシーな魅力が空間に刺激を加え、楽しさとワクワクが融合しています。カウンター席だけでなくテーブル席もあるユニークで魅力的なガールズバーは、
     </p>
     <p class="about__text__02">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/about_text_02.png" alt="府中でLEGEND～レジェンド～だけです。">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/about_text_02.png" alt="府中でLEGEND～レジェンド～だけです。" width="375" height="375">
     </p>
   </div>
 </section>
@@ -66,7 +66,7 @@ $the_query = new WP_Query($args);
 ?>
 <section id="cast" class="cast common__section">
   <h2 class="cast__title">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_title.png" alt="キャスト">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_title.png" alt="キャスト" width="375" height="106" loading="lazy">
   </h2>
   <?php if ($the_query->have_posts()) : ?>
     <div id="top-cast-swiper" class="top__cast__swiper swiper">
@@ -98,10 +98,10 @@ $the_query = new WP_Query($args);
 ?>
 <section id="fee-system" class="feesystem common__section">
   <h2 class="feesystem__title">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/feesystem_title.png" alt="料金システム">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/feesystem_title.png" alt="料金システム" width="375" height="106">
   </h2>
   <div class="feesystem__img">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/feesystem_img_01.png" alt="">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/feesystem_img_01.png" alt="" width="368" height="186">
   </div>
   <table class="feesystem__table">
     <thead>
@@ -137,7 +137,7 @@ $the_query = new WP_Query($args);
     <p class="feesystem__asterisk__02">※クレジットカード取扱いあり（クレジットカード手数料はございません）</p>
   </div>
   <div class="feesystem__payment">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/feesystem_payment.png" alt="VISA Mastercard JCB AMEX Diners">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/feesystem_payment.png" alt="VISA Mastercard JCB AMEX Diners" width="375" height="375">
   </div>
 </section>
 
@@ -146,7 +146,7 @@ $the_query = new WP_Query($args);
 ?>
 <section id="access" class="access common__section">
   <h2 class="access__title">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/access_title.png" alt="店舗情報・アクセス">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/access_title.png" alt="店舗情報・アクセス" width="375" height="106">
   </h2>
   <table class="access__table">
     <thead>
@@ -210,7 +210,7 @@ $the_query = new WP_Query($args);
     </ul>
   </div>
   <div class="access__map common__width">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.2558333345746!2d139.47476547623106!3d35.67070213055162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018e4fb4913a45b%3A0xdacbfd5e171ef2a2!2zQ0xVQiBMRUdFTkQgKOODrOOCuOOCp-ODs-ODiSk!5e0!3m2!1sja!2sjp!4v1705383417778!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.2558333345746!2d139.47476547623106!3d35.67070213055162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018e4fb4913a45b%3A0xdacbfd5e171ef2a2!2zQ0xVQiBMRUdFTkQgKOODrOOCuOOCp-ODs-ODiSk!5e0!3m2!1sja!2sjp!4v1705383417778!5m2!1sja!2sjp" width="600" height="450" style="border:0;" loading="lazy" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade">
     </iframe>
   </div>
 </section>
@@ -227,7 +227,7 @@ $the_query = new WP_Query($args);
 ?>
 <section id="cast-blog" class="cast__blog common__section">
   <h2 class="cast__blog__title">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_blog_title.png" alt="キャスト ブログ">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_blog_title.png" alt="キャスト ブログ" width="375" height="106">
   </h2>
   <?php if ($the_query->have_posts()) : ?>
     <ul class="cast__blog__list common__width">
@@ -267,7 +267,7 @@ $the_query = new WP_Query($args);
   <?php endif; ?>
   <?php wp_reset_postdata(); ?>
   <a href="<?= home_url('/archive-blog') ?>" class="cast__blog__button">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_blog_button.png" alt="もっと見る">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_blog_button.png" alt="もっと見る" width="375" height="375" loading="lazy">
   </a>
 </section>
 

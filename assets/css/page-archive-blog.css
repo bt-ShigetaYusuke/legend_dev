@@ -1,19 +1,7 @@
 /* page-archive-blog */
 /* #cast-blog */
-.cast__blog {
-  margin: 4rem auto 0;
-}
-
-.cast__blog__title {
-}
-
 .cast__blog__list {
-  margin: 2rem auto 0;
-}
-
-.cast__blog__item {
-}
-.cast__blog__item:nth-child(n + 2) {
+  margin: -5rem auto 0;
 }
 
 .cast__blog__item__link {

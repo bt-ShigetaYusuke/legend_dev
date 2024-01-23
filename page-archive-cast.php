@@ -1,15 +1,15 @@
 <?php
 $args = array(
   'post_type' => 'cast',
-  'posts_per_page' => -1,
-  'order' => 'DESC', //DESCかASC
+  'posts_per_page' => 100,
+  'order' => 'DESC',
 );
 $wp_query = new WP_Query($args);
 ?>
 
 <?php get_header(); ?>
 
-<section id="cast" class="cast common__section">
+<section id="cast" class="cast">
   <h2 class="cast__title">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_title.png" alt="キャスト">
   </h2>
@@ -31,7 +31,18 @@ $wp_query = new WP_Query($args);
     </ul>
     </div>
   <?php endif; ?>
-  <?php wp_reset_postdata(); ?>
+  <?php
+  $big = 999999999;
+
+  echo paginate_links(array(
+    'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+    'format' => '?paged=%#%',
+    'current' => max(1, get_query_var('paged')),
+    'total' => $wp_query->max_num_pages,
+    'type' => 'list'
+  ));
+  wp_reset_postdata();
+  ?>
 </section>
 
 <?php get_footer(); ?>

@@ -63,6 +63,28 @@ img {
   background: url(../img/feesystem_link_icon.png) no-repeat center / cover;
 }
 
+/* #pagenation */
+.page-numbers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 4rem;
+  margin: 2.5rem auto 0;
+  font-size: 3rem;
+}
+
+.page-numbers li span.current {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 100%;
+  background: #fff;
+  color: #000;
+  font-weight: bold;
+}
+
 /* #header */
 .header {
   position: sticky;

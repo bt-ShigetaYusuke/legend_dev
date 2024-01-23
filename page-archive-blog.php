@@ -1,16 +1,18 @@
 <?php get_header(); ?>
 
 <?php
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = array(
   'post_type' => 'post',
   'category_name' => 'cast',
-  'posts_per_page' => -1,
+  'posts_per_page' => 5,
+  'paged' => $paged,
 );
 
 $the_query = new WP_Query($args);
 ?>
 
-<section id="cast-blog" class="cast__blog common__section">
+<section id="cast-blog" class="cast__blog">
   <h2 class="cast__blog__title">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_blog_title.png" alt="キャスト ブログ">
   </h2>
@@ -50,10 +52,17 @@ $the_query = new WP_Query($args);
       <p>お探しの記事は見つかりませんでした。</p>
     </div>
   <?php endif; ?>
-  <?php wp_reset_postdata(); ?>
-  <a href="<?= home_url('/archive-blog') ?>" class="cast__blog__button">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_blog_button.png" alt="もっと見る">
-  </a>
-</section>
+  <?php
+  $big = 999999999;
+
+  echo paginate_links(array(
+    'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+    'format' => '?paged=%#%',
+    'current' => max(1, get_query_var('paged')),
+    'total' => $the_query->max_num_pages,
+    'type' => 'list'
+  ));
+  wp_reset_postdata();
+  ?>
 
 <?php get_footer(); ?>

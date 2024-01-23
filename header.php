@@ -33,7 +33,7 @@
       </ul>
       <h1 class="header__logo">
         <a href="<?= home_url() ?>" class="header__logo__link">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/header_logo.png" alt="Legend">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/header_logo.png" alt="Legend" width="129" height="36">
         </a>
       </h1>
       <ul class="header__sns__list grid__item grid__container">

@@ -101,14 +101,13 @@ handlePageScroll();
 
 // ページ内遷移 トップページ用
 function handleAnchorClicks() {
-  const headerHeight = document.querySelector("#header").offsetHeight;
   document.querySelectorAll('a[href*="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       const hash = this.getAttribute("href").split("#")[1];
       const target = document.querySelector(`#${hash}`);
       if (target) {
         e.preventDefault();
-        const top = window.pageYOffset + target.getBoundingClientRect().top - headerHeight;
+        const top = window.pageYOffset + target.getBoundingClientRect().top;
         window.scrollTo({
           top: top,
           behavior: "smooth",

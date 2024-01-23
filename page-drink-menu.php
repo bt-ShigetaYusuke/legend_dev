@@ -7,8 +7,8 @@
 <nav class="menu__nav common__width">
   <ul class="menu__nav__list">
     <li class="menu__nav__item">
-      <a href="#all-you-can-drink" class="menu__nav__item__link">飲み放題メニュー</a>
-      <a href="#special-menu" class="menu__nav__item__link">LEGEND SPECIAL MENU(有料)</a>
+      <a href="#all-you-can-drink" class="menu__nav__item__link">▸飲み放題メニュー</a>
+      <a href="#special-menu" class="menu__nav__item__link">▸LEGEND SPECIAL MENU(有料)</a>
     </li>
   </ul>
 </nav>
