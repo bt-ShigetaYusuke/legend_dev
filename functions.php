@@ -2,6 +2,20 @@
 const MAP_URL_LEGEND = 'https://www.google.com/maps/place/%E3%80%92183-0055+%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%B8%AD%E5%B8%82%E5%BA%9C%E4%B8%AD%E7%94%BA%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%96%E2%88%92%EF%BC%91+%E5%8F%A4%E6%B2%A2%E3%83%93%E3%83%AB/@35.6725208,139.4807786,18.55z/data=!4m6!3m5!1s0x6018e4fb49659f27:0xb8a358616054c535!8m2!3d35.6723727!4d139.4811455!16s%2Fg%2F12hxf5hh8?hl=ja&entry=ttu';
 const MAP_URL_JEWEL = 'https://maps.app.goo.gl/RtSB5ZzmueuktVw9A';
 
+// ログイン画面のロゴ変更
+function login_logo() {
+	echo '<style type="text/css">
+		.login h1 a {
+			background-image: url('.get_template_directory_uri().'/assets/img/fav.png);
+			width: 100px;
+			height: 100px;
+			background-size: cover;
+			background-position: center top;
+		}
+		</style>';
+  }
+add_action('login_head', 'login_logo');
+
 // アイキャッチ画像
 function setup_theme()
 {
@@ -23,22 +37,6 @@ function set_default_thumbnail_image($html, $post_id)
   return $html;
 }
 add_filter('post_thumbnail_html', 'set_default_thumbnail_image', 10, 2);
-
-// 画像遅延読み込み
-// function add_lazyload($content)
-// {
-//   $dom = new DOMDocument();
-//   libxml_use_internal_errors(true);
-//   $dom->loadHTML(mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8'));
-//   libxml_clear_errors();
-//   $images = $dom->getElementsByTagName('img');
-//   foreach ($images as $image) {
-//     $image->setAttribute('loading', 'lazy');
-//   }
-//   $html = $dom->saveHTML();
-//   return $html;
-// }
-// add_filter('the_content', 'add_lazyload');
 
 // fontsの読み込みパフォーマンス向上
 function theme_resource_hints($urls, $relation_type)
