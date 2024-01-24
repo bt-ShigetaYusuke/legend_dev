@@ -17,6 +17,23 @@ function login_logo()
 }
 add_action('login_head', 'login_logo');
 
+// 投稿ページのmeta keyword設定
+function add_meta_keywords() {
+  if (is_singular('post')) {
+    global $post;
+    $keywords = 'ガールズバー,キャストブログ,水着,ビキニ,府中,レジェンド,legend';
+
+    echo '<meta name="keywords" content="' . $keywords . '">';
+  }
+  if (is_singular('cast')) {
+    global $post;
+    $keywords = 'ガールズバー,キャスト,水着,ビキニ,府中,レジェンド,legend';
+
+    echo '<meta name="keywords" content="' . $keywords . '">';
+  }
+}
+add_action('wp_head', 'add_meta_keywords');
+
 // アイキャッチ画像
 function setup_theme()
 {
