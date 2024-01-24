@@ -16,3 +16,15 @@ p {
 .post img {
   margin: 3rem 0;
 }
+
+.common__link{
+  text-align: right;
+}
+.common__link p{
+  font-size: 2.4rem;
+  padding: 0 3rem 0 0;
+}
+.common__link p:before{
+  width: 2.2rem;
+  height: 2.2rem;
+}

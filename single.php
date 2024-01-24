@@ -27,4 +27,29 @@
   </article>
 </section>
 
+<?php
+$author_id = get_the_author_meta('ID');
+$cast_args = array(
+  'post_type' => 'cast',
+  'author' => $author_id,
+  'posts_per_page' => 1,
+);
+
+$cast_query = new WP_Query($cast_args);
+
+if ($cast_query->have_posts()) :
+  $cast_query->the_post();
+  $post_link = get_permalink();
+endif;
+?>
+
+<?php if (!empty($post_link)) : ?>
+  <a href="<?php echo $post_link; ?>" class="common__link common__width">
+    <p class=""><?= the_author_meta('nickname'); ?>のプロフィールを見る</p>
+  </a>
+<?php endif; ?>
+
+<?php wp_reset_postdata(); ?>
+
+
 <?php get_footer(); ?>
