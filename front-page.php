@@ -242,7 +242,7 @@ $the_query = new WP_Query($args);
           <a href="<?php the_permalink(); ?>" class="cast__blog__item__link grid__container">
             <div class="grid__item">
               <div class="cast__blog__item__img">
-                <?php the_post_thumbnail(); ?>
+                <?php the_post_thumbnail(array(75, 75)); ?>
               </div>
             </div>
             <div class="grid__item">

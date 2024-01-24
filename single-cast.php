@@ -73,7 +73,6 @@ for ($i = 1; $i <= 10; $i++) {
 </article>
 
 <?php
-// 現在の投稿の投稿者のIDを取得
 $author_id = get_the_author_meta('ID');
 
 $args = array(
@@ -123,10 +122,12 @@ $wp_query = new WP_Query($args);
     <?php else : ?>
     <?php endif; ?>
   </ul>
+  <?php if ($wp_query->found_posts > 5) : ?>
+    <a href="<?= get_author_posts_url(get_the_author_meta('ID')); ?>" class="cast__blog__button">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_blog_button.png" alt="もっと見る">
+    </a>
+  <?php endif; ?>
   <?php wp_reset_postdata(); ?>
-  <a href="<?= home_url('/archive-blog') ?>" class="cast__blog__button">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_blog_button.png" alt="もっと見る">
-  </a>
 </article>
 
 <?php get_footer(); ?>

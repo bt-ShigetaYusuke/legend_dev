@@ -3,17 +3,18 @@ const MAP_URL_LEGEND = 'https://www.google.com/maps/place/%E3%80%92183-0055+%E6%
 const MAP_URL_JEWEL = 'https://maps.app.goo.gl/RtSB5ZzmueuktVw9A';
 
 // ログイン画面のロゴ変更
-function login_logo() {
-	echo '<style type="text/css">
+function login_logo()
+{
+  echo '<style type="text/css">
 		.login h1 a {
-			background-image: url('.get_template_directory_uri().'/assets/img/fav.png);
+			background-image: url(' . get_template_directory_uri() . '/assets/img/fav.png);
 			width: 100px;
 			height: 100px;
 			background-size: cover;
 			background-position: center top;
 		}
 		</style>';
-  }
+}
 add_action('login_head', 'login_logo');
 
 // アイキャッチ画像
@@ -27,11 +28,14 @@ add_action('after_setup_theme', 'setup_theme');
 // defaultのサムネイル画像
 function set_default_thumbnail_image($html, $post_id)
 {
+  $width = 75;
+  $height = 75;
+
   if ("" === $html) {
     if (has_category('cast', $post_id)) {
-      $html = '<img src="' . get_template_directory_uri() . '/assets/img/defalt_post_cast.png" alt="" />';
+      $html = '<img src="' . get_template_directory_uri() . '/assets/img/defalt_post_cast.png" alt="" width="' . $width . '" height="' . $height . '" />';
     } else {
-      $html = '<img src="' . get_template_directory_uri() . '/assets/img/logo.png" alt="" />';
+      $html = '<img src="' . get_template_directory_uri() . '/assets/img/logo.png" alt="" width="' . $width . '" height="' . $height . '" />';
     }
   }
   return $html;
@@ -71,6 +75,9 @@ function theme_enqueue_styles()
   }
   if (is_home()) {
     $styles['page-archive-cast-style'] = get_template_directory_uri() . '/assets/css/page-archive-cast.css';
+  }
+  if (is_author()) {
+    $styles['author-style'] = get_template_directory_uri() . '/assets/css/author.css';
   }
   if (is_singular('post')) {
     $styles['single-style'] = get_template_directory_uri() . '/assets/css/single.css';

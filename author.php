@@ -1,23 +1,25 @@
-<?php get_header(); ?>
-
 <?php
+// #cast-blog
+$author_id = get_queried_object_id();
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = array(
   'post_type' => 'post',
-  'category_name' => 'cast',
   'posts_per_page' => 10,
+  'author' => $author_id,
   'paged' => $paged,
 );
 
 $the_query = new WP_Query($args);
 ?>
 
-<section id="cast-blog" class="cast__blog">
+<?php get_header(); ?>
+
+<section class="cast__blog">
   <h2 class="cast__blog__title">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_blog_title.png" alt="キャスト ブログ">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_blog_title.png" alt="キャスト ブログ" width="375" height="106">
   </h2>
   <?php if ($the_query->have_posts()) : ?>
-    <ul class="cast__blog__list grid__container common__width">
+    <ul class="cast__blog__list common__width">
       <?php while ($the_query->have_posts()) : $the_query->the_post();
         // 文字数制限
         $title = get_the_title();
@@ -25,11 +27,11 @@ $the_query = new WP_Query($args);
         $content = get_the_content('', false, '');
         $content = wp_strip_all_tags($content);
       ?>
-        <li class="cast__blog__item grid__item">
+        <li class="cast__blog__item">
           <a href="<?php the_permalink(); ?>" class="cast__blog__item__link grid__container">
             <div class="grid__item">
               <div class="cast__blog__item__img">
-                <?php the_post_thumbnail(); ?>
+                <?php the_post_thumbnail(array(75, 75)); ?>
               </div>
             </div>
             <div class="grid__item">
@@ -64,5 +66,6 @@ $the_query = new WP_Query($args);
   ));
   wp_reset_postdata();
   ?>
+</section>
 
 <?php get_footer(); ?>
