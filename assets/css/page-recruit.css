@@ -1,7 +1,7 @@
 /* #common */
 /* #common__jobtype */
 .common__jobtype {
-  margin: 2rem auto 0;
+  padding: 3rem 0 0;
 }
 
 .common__jobtype__label__list.grid__container {

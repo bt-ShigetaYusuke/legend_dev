@@ -2,7 +2,7 @@
 $items = range(1, 11);
 ?>
 
-<section id="counterlady" class="counterlady common__jobtype">
+<section id="counter-lady" class="counterlady common__jobtype">
   <h2 class="counterlady__title common__title">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/recruit/counter-lady/counterlady_title.png" alt="カウンターレディー">
   </h2>

@@ -1,4 +1,4 @@
-<section id="feed-driver" class="feeddriver common__recruit__section">
+<section id="feed-driver" class="feeddriver common__recruit__section common__jobtype">
   <h2 class="feeddriver__title common__title">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/recruit/feed-driver/feeddriver_title.png" alt="送りドライバー">
   </h2>

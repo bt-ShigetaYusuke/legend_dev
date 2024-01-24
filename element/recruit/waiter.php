@@ -1,4 +1,4 @@
-<section id="waiter" class="waiter common__recruit__section">
+<section id="waiter" class="waiter common__recruit__section common__jobtype">
   <h2 class="waiter__title common__title">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/recruit/waiter/waiter_title.png" alt="ウェイター">
   </h2>
