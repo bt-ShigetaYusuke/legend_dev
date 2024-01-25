@@ -111,6 +111,9 @@ function theme_enqueue_styles()
   if (is_page('archive-blog')) {
     $styles['page-archive-blog-style'] = get_template_directory_uri() . '/assets/css/page-archive-blog.css';
   }
+  if (is_page('manual-cast') || is_page('manual-post') || is_page('manual-admin')) {
+    $styles['page-manual-style'] = get_template_directory_uri() . '/assets/css/page-manual.css';
+  }
 
   foreach ($styles as $id => $url) {
     wp_enqueue_style($id, $url);
@@ -121,8 +124,10 @@ add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 // js読み込み
 function theme_enqueue_scripts()
 {
-  wp_enqueue_script('swiper-min', get_template_directory_uri() . '/assets/js/swiper.min.js', array(), false, true);
-  wp_enqueue_script('theme-script', get_template_directory_uri() . '/assets/js/main.js', array(), false, true);
+  if (!is_page('manual-cast') && !is_page('manual-post') && !is_page('manual-admin')) {
+    wp_enqueue_script('swiper-min', get_template_directory_uri() . '/assets/js/swiper.min.js', array(), false, true);
+    wp_enqueue_script('theme-script', get_template_directory_uri() . '/assets/js/main.js', array(), false, true);
+  }
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
 

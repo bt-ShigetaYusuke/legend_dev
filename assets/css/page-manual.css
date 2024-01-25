@@ -1,0 +1,59 @@
+div{
+  margin: 60px 0;
+}
+
+@media (max-width: 600px) {
+  div{
+    margin: 60px auto 0;
+    padding: 0 20px;
+  }
+}
+
+h2,h3{
+  font-weight: bold;
+}
+
+h2{
+  color: #3bf;
+  padding: 60px 0 10px;
+  font-size: 24px;
+}
+h2:nth-of-type(n + 2){
+  margin: 40px 0 0;
+}
+
+h3{
+  margin: 40px auto 8px;
+  font-size: 20px;
+}
+
+ul{
+  margin: 20px 0;
+}
+
+a{
+  font-size: 18px;
+  text-decoration: underline;
+}
+a:hover{
+  color: #3bf;
+}
+
+p{
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+hr{
+  display: none;
+  margin: 8px 0 0;
+}
+
+figure{
+  margin: 10px 0;
+}
+
+.header,
+.footer{
+  display: none;
+}
