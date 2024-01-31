@@ -1,11 +1,24 @@
 <?php get_header(); ?>
 
 <?php
+// #cast-blog
+$user_query = new WP_User_Query(array(
+  'meta_key' => 'cast_display',
+  'meta_value' => 'show'
+));
+
+$author_ids = array();
+if (!empty($user_query->get_results())) {
+  foreach ($user_query->get_results() as $user) {
+    $author_ids[] = $user->ID;
+  }
+}
+
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = array(
   'post_type' => 'post',
-  'category_name' => 'cast',
   'posts_per_page' => 10,
+  'author__in' => $author_ids,
   'paged' => $paged,
 );
 
@@ -24,6 +37,8 @@ $the_query = new WP_Query($args);
         $title = wp_trim_words(get_the_title(), 18, '…');
         $content = get_the_content('', false, '');
         $content = wp_strip_all_tags($content);
+        $author_id = get_the_author_meta('ID');
+        $user_name = get_field('cast_name', 'user_' . $author_id);
       ?>
         <li class="cast__blog__item grid__item">
           <a href="<?php the_permalink(); ?>" class="cast__blog__item__link grid__container">
@@ -40,7 +55,7 @@ $the_query = new WP_Query($args);
                 <?= $content ?>
               </div>
               <p class="cast__blog__item__author">
-                <?php the_author_meta('nickname'); ?>
+                <?= $user_name ?>
               </p>
             </div>
           </a>

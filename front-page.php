@@ -57,37 +57,44 @@ for ($i = 1; $i <= 10; $i++) {
 
 <?php
 // #cast
-$args = array(
-  'post_type' => 'cast',
-  'posts_per_page' => -1,
-);
+$users = get_users();
+$display_users = array();
 
-$the_query = new WP_Query($args);
+foreach ($users as $user) {
+  $user_id = $user->ID;
+  $cast_display = get_field('cast_display', 'user_' . $user_id);
+  // cast_displayがshowの場合のみ表示
+  if ($cast_display == 'show') {
+    $cast_top_img = get_field('cast_top_image', 'user_' . $user_id);
+    $cast_name = get_field('cast_name', 'user_' . $user_id);
+    $display_users[] = array(
+      'name' => $cast_name,
+      'top_image' => $cast_top_img,
+      'link' => get_author_posts_url($user_id)
+    );
+  }
+}
 ?>
 <section id="cast" class="cast common__section">
   <h2 class="cast__title">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_title.png" alt="キャスト" width="375" height="106" loading="lazy">
   </h2>
-  <?php if ($the_query->have_posts()) : ?>
-    <div id="top-cast-swiper" class="top__cast__swiper swiper">
-      <ul class="cast__list swiper-wrapper">
-        <?php while ($the_query->have_posts()) :
-          $the_query->the_post(); ?>
-          <li class="cast__item swiper-slide">
-            <a href="<?php the_permalink(); ?>">
-              <div class="cast__item__img">
-                <?php the_post_thumbnail(); ?>
-              </div>
-              <div class="cast__name">
-                <?php the_field('cast_name'); ?>
-              </div>
-            </a>
-          </li>
-        <?php endwhile; ?>
-      </ul>
-    </div>
-  <?php endif; ?>
-  <?php wp_reset_postdata(); ?>
+  <div id="top-cast-swiper" class="top__cast__swiper swiper">
+    <ul class="cast__list swiper-wrapper">
+      <?php foreach ($display_users as $user) : ?>
+        <li class="cast__item swiper-slide">
+          <a href="<?= $user['link'] ?>">
+            <div class="cast__item__img">
+              <img src="<?= $user['top_image'] ?>" alt="">
+            </div>
+            <div class="cast__name">
+              <?= $user['name'] ?>
+            </div>
+          </a>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+  </div>
   <a href="<?= home_url('/archive-cast') ?>" class="cast__link common__width common__link">
     <p class="cast__link__text">全てのキャストを見る</p>
   </a>
@@ -217,10 +224,22 @@ $the_query = new WP_Query($args);
 
 <?php
 // #cast-blog
+$user_query = new WP_User_Query(array(
+  'meta_key' => 'cast_display',
+  'meta_value' => 'show'
+));
+
+$author_ids = array();
+if (!empty($user_query->get_results())) {
+  foreach ($user_query->get_results() as $user) {
+    $author_ids[] = $user->ID;
+  }
+}
+
 $args = array(
   'post_type' => 'post',
-  // 'category_name' => 'cast',
   'posts_per_page' => 5,
+  'author__in' => $author_ids,
 );
 
 $the_query = new WP_Query($args);
@@ -237,6 +256,8 @@ $the_query = new WP_Query($args);
         $title = wp_trim_words(get_the_title(), 18, '…');
         $content = get_the_content('', false, '');
         $content = wp_strip_all_tags($content);
+        $author_id = get_the_author_meta('ID');
+        $user_name = get_field('cast_name', 'user_' . $author_id);
       ?>
         <li class="cast__blog__item">
           <a href="<?php the_permalink(); ?>" class="cast__blog__item__link grid__container">
@@ -253,7 +274,7 @@ $the_query = new WP_Query($args);
                 <?= $content ?>
               </div>
               <p class="cast__blog__item__author">
-                <?php the_author_meta('nickname'); ?>
+                <?= $user_name ?>
               </p>
             </div>
           </a>

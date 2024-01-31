@@ -90,9 +90,6 @@ function theme_enqueue_styles()
   if (is_front_page()) {
     $styles['top-style'] = get_template_directory_uri() . '/assets/css/top.css';
   }
-  if (is_home()) {
-    $styles['page-archive-cast-style'] = get_template_directory_uri() . '/assets/css/page-archive-cast.css';
-  }
   if (is_author()) {
     $styles['author-style'] = get_template_directory_uri() . '/assets/css/author.css';
   }
@@ -110,6 +107,9 @@ function theme_enqueue_styles()
   }
   if (is_page('archive-blog')) {
     $styles['page-archive-blog-style'] = get_template_directory_uri() . '/assets/css/page-archive-blog.css';
+  }
+  if (is_page('archive-cast')) {
+    $styles['page-archive-cast-style'] = get_template_directory_uri() . '/assets/css/page-archive-cast.css';
   }
   if (is_page('manual-cast') || is_page('manual-post') || is_page('manual-admin')) {
     $styles['page-manual-style'] = get_template_directory_uri() . '/assets/css/page-manual.css';
@@ -130,51 +130,6 @@ function theme_enqueue_scripts()
   }
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
-
-// カスタム投稿タイプ cast
-add_action('init', 'create_post_type');
-function create_post_type()
-{
-  register_post_type(
-    'cast',
-    array(
-      'label' => 'キャスト',
-      'public' => true,
-      'has_archive' => false,
-      'show_in_rest' => true,
-      'menu_position' => 5,
-      'supports' => array(
-        'title',
-        'editor',
-        'thumbnail',
-        'revisions',
-        'author',
-      ),
-    )
-  );
-}
-
-// カスタム投稿タイプ cast のパーマリンクカスタマイズ
-add_filter('post_type_link', 'custom_post_link', 1, 2);
-function custom_post_link($link, $post)
-{
-  if ($post->post_type === 'cast') {
-    // カスタム投稿名が"cast"の投稿のパーマリンクを「/cast/投稿ID/」の形に書き換え
-    return home_url('/cast/' . $post->ID);
-  } else {
-    return $link;
-  }
-}
-
-//書き換えたパーマリンクに対応したリライトルールを追加
-add_filter('rewrite_rules_array', 'custom_post_link_rewrite');
-function custom_post_link_rewrite($rules)
-{
-  $rewrite_rules = array(
-    'cast/([0-9]+)/?$' => 'index.php?post_type=cast&p=$matches[1]',
-  );
-  return $rewrite_rules + $rules;
-}
 
 // Contact Form 7で自動挿入されるPタグ、brタグを削除
 add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
