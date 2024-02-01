@@ -56,6 +56,22 @@
     </div>
 
     <div id="header-overlay" class="header__overlay"></div>
+
+    <?php
+    # header-nav
+    // cast_displayがshowのユーザーが一件もヒットしない場合、メニューから「キャスト」と「キャストブログ」を非表示に
+    $user_query = new WP_User_Query(array(
+      'meta_key' => 'cast_display',
+      'meta_value' => 'show'
+    ));
+
+    $author_ids = array();
+    if (!empty($user_query->get_results())) {
+      foreach ($user_query->get_results() as $user) {
+        $author_ids[] = $user->ID;
+      }
+    }
+    ?>
     <nav id="header-nav" class="header__nav">
       <div id="header-hamburger-close" class="header__hamburger__close">
         <span></span>
@@ -64,11 +80,15 @@
       </div>
       <ul class="header__nav__list">
         <li class="header__nav__item"><a href="<?= home_url() ?>" class="header__nav__item__link">TOP</a></li>
-        <li class="header__nav__item"><a href="<?= home_url('#cast') ?>" class="header__nav__item__link">キャスト</a></li>
+        <?php if (!empty($author_ids)) : ?>
+          <li class="header__nav__item"><a href="<?= home_url('#cast') ?>" class="header__nav__item__link">キャスト</a></li>
+        <?php endif; ?>
         <li class="header__nav__item"><a href="<?= home_url('#fee-system') ?>" class="header__nav__item__link">料金システム</a></li>
         <li class="header__nav__item"><a href="<?= home_url('#access') ?>" class="header__nav__item__link">店舗情報・アクセス</a></li>
         <li class="header__nav__item"><a href="<?= home_url('recruit?param=counter-lady') ?>" class="header__nav__item__link">求人情報</a></li>
-        <li class="header__nav__item"><a href="<?= home_url('#cast-blog') ?>" class="header__nav__item__link">キャストブログ</a></li>
+        <?php if (!empty($author_ids)) : ?>
+          <li class="header__nav__item"><a href="<?= home_url('#cast-blog') ?>" class="header__nav__item__link">キャストブログ</a></li>
+        <?php endif; ?>
       </ul>
       <ul class="header__nav__contact__info__list">
         <li class="header__nav__contact__info__item">
