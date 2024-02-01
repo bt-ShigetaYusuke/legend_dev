@@ -18,7 +18,8 @@ function login_logo()
 add_action('login_head', 'login_logo');
 
 // 投稿ページのmeta keyword設定
-function add_meta_keywords() {
+function add_meta_keywords()
+{
   if (is_singular('post')) {
     global $post;
     $keywords = 'ガールズバー,キャストブログ,水着,ビキニ,府中,レジェンド,legend';
@@ -87,7 +88,7 @@ function theme_enqueue_styles()
     'common-style' => get_template_directory_uri() . '/assets/css/common.css',
   );
 
-  if (is_front_page()) {
+  if (is_front_page() || is_home() || is_404()) {
     $styles['top-style'] = get_template_directory_uri() . '/assets/css/top.css';
   }
   if (is_author()) {

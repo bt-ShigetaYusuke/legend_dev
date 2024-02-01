@@ -61,7 +61,7 @@ if ($user_display == 'show') {
       <li class="cast__item grid__item">
         <h3 class="cast__item__title">血液型</h3>
         <p class="cast__item__text">
-          <?= $user_blood_type ?>型
+          <?= $user_blood_type ?>
         </p>
       </li>
       <li class="cast__item grid__item">
