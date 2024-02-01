@@ -26,7 +26,7 @@ function add_meta_keywords()
 
     echo '<meta name="keywords" content="' . $keywords . '">';
   }
-  if (is_singular('cast')) {
+  if (is_author()) {
     global $post;
     $keywords = 'ガールズバー,キャスト,水着,ビキニ,府中,レジェンド,legend';
 
@@ -96,9 +96,6 @@ function theme_enqueue_styles()
   }
   if (is_singular('post')) {
     $styles['single-style'] = get_template_directory_uri() . '/assets/css/single.css';
-  }
-  if (is_singular('cast')) {
-    $styles['single-cast-style'] = get_template_directory_uri() . '/assets/css/single-cast.css';
   }
   if (is_page('recruit')) {
     $styles['page-recruit-style'] = get_template_directory_uri() . '/assets/css/page-recruit.css';
