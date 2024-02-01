@@ -71,6 +71,20 @@
         $author_ids[] = $user->ID;
       }
     }
+
+    // キャストブログの投稿があるかどうかを確認
+    $has_posts = false;
+    foreach ($author_ids as $author_id) {
+      $temp_query = new WP_Query(array(
+        'post_type' => 'post',
+        'posts_per_page' => 1,
+        'author' => $author_id,
+      ));
+      if ($temp_query->have_posts()) {
+        $has_posts = true;
+        break; // 投稿が見つかったらループを抜ける
+      }
+    }
     ?>
     <nav id="header-nav" class="header__nav">
       <div id="header-hamburger-close" class="header__hamburger__close">
@@ -86,7 +100,7 @@
         <li class="header__nav__item"><a href="<?= home_url('#fee-system') ?>" class="header__nav__item__link">料金システム</a></li>
         <li class="header__nav__item"><a href="<?= home_url('#access') ?>" class="header__nav__item__link">店舗情報・アクセス</a></li>
         <li class="header__nav__item"><a href="<?= home_url('recruit?param=counter-lady') ?>" class="header__nav__item__link">求人情報</a></li>
-        <?php if (!empty($author_ids)) : ?>
+        <?php if (!empty($author_ids) && $has_posts) : ?>
           <li class="header__nav__item"><a href="<?= home_url('#cast-blog') ?>" class="header__nav__item__link">キャストブログ</a></li>
         <?php endif; ?>
       </ul>

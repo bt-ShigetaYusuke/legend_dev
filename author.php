@@ -100,11 +100,11 @@ $args = array(
 $the_query = new WP_Query($args);
 ?>
 
-<section class="cast__blog">
-  <h2 class="cast__blog__title">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_blog_title.png" alt="キャスト ブログ" width="375" height="106">
-  </h2>
-  <?php if ($the_query->have_posts()) : ?>
+<?php if ($the_query->have_posts()) : ?>
+  <section class="cast__blog">
+    <h2 class="cast__blog__title">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_blog_title.png" alt="キャスト ブログ" width="375" height="106">
+    </h2>
     <ul class="cast__blog__list common__width">
       <?php while ($the_query->have_posts()) : $the_query->the_post();
         // 文字数制限
@@ -136,23 +136,19 @@ $the_query = new WP_Query($args);
         </li>
       <?php endwhile; ?>
     </ul>
-  <?php else : ?>
-    <div class="cast__blog__error">
-      <p>お探しの記事は見つかりませんでした。</p>
-    </div>
-  <?php endif; ?>
-  <?php
-  $big = 999999999;
+    <?php
+    $big = 999999999;
 
-  echo paginate_links(array(
-    'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
-    'format' => '?paged=%#%',
-    'current' => max(1, get_query_var('paged')),
-    'total' => $the_query->max_num_pages,
-    'type' => 'list'
-  ));
-  wp_reset_postdata();
-  ?>
-</section>
+    echo paginate_links(array(
+      'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+      'format' => '?paged=%#%',
+      'current' => max(1, get_query_var('paged')),
+      'total' => $the_query->max_num_pages,
+      'type' => 'list'
+    ));
+    wp_reset_postdata();
+    ?>
+  </section>
+<?php endif; ?>
 
 <?php get_footer(); ?>
