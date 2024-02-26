@@ -64,7 +64,7 @@
   width: 69rem;
   margin: 0 auto;
 }
-.cast__img__list.swiper-wrapper:not(.active) .cast__img__item_{
+.cast__img__list.swiper-wrapper:not(.active) .cast__img__item{
   flex: 1;
 }
 
