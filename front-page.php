@@ -79,7 +79,7 @@ foreach ($users as $user) {
 if (!empty($display_users)) :
   $swiper_id = '';
   $active = '';
-  if (!(count($display_users) <= 3)) {
+  if (!(count($display_users) < 3)) {
     $swiper_id = 'top-cast-swiper';
     $active = 'active';
   }

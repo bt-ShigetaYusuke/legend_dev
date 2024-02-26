@@ -38,7 +38,7 @@ if ($user_display == 'show') {
   // #cast-profile
   $swiper_id = '';
   $active = '';
-  if (!(count($user_images) <= 3)) {
+  if (!(count($user_images) < 3)) {
     $swiper_id = 'single-cast-swiper';
     $active = 'active';
   }
