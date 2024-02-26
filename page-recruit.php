@@ -65,19 +65,22 @@ $recruit_apply_items = [
     'img' => get_template_directory_uri() . '/assets/img/recruit/recruitapply_item_link_02.png',
     'alt' => 'LINEで応募'
   ],
-  'mail' => [
-    'link' => 'mailto:' . get_recruit_email(),
-    'img' => get_template_directory_uri() . '/assets/img/recruit/recruitapply_item_link_03.png',
-    'alt' => 'メールで応募'
-  ],
-  'form' => [
-    'link' => '#recruit-form',
-    'img' => get_template_directory_uri() . '/assets/img/recruit/recruitapply_item_link_04.png',
-    'alt' => 'WEBから応募'
-  ],
+  // 'mail' => [
+  //   'link' => 'mailto:' . get_recruit_email(),
+  //   'img' => get_template_directory_uri() . '/assets/img/recruit/recruitapply_item_link_03.png',
+  //   'alt' => 'メールで応募'
+  // ],
+  // 'form' => [
+  //   'link' => '#recruit-form',
+  //   'img' => get_template_directory_uri() . '/assets/img/recruit/recruitapply_item_link_04.png',
+  //   'alt' => 'WEBから応募'
+  // ],
 ];
 ?>
 
+<?php
+// #recruit-apply
+?>
 <section id="recruit-apply" class="recruitapply">
   <h2 class="recruitapply__title">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/recruit/recruitapply_title.png" alt="まずはお気軽にお問い合わせください!">
@@ -93,6 +96,9 @@ $recruit_apply_items = [
   </ul>
 </section>
 
+<?php
+// #recruit-form
+/*
 <section id="recruit-form" class="recruit__form">
   <h2 class="recruit__form__title common__width">WEBから応募</h2>
   <p class="recruit__form__text__top common__width">以下の応募フォームに必要事項を入力のうえ、ご応募ください。</p>
@@ -100,5 +106,7 @@ $recruit_apply_items = [
   get_template_part('element/recruit/form');
   ?>
 </section>
+*/
+?>
 
 <?php get_footer(); ?>

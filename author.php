@@ -34,13 +34,22 @@ if ($user_display == 'show') {
     <p class="cast__link__text">他のキャストを見る</p>
   </a>
 
-  <article id="cast-profile" class="cast">
+  <?php
+  // #cast-profile
+  $swiper_id = '';
+  $active = '';
+  if (!(count($user_images) <= 3)) {
+    $swiper_id = 'single-cast-swiper';
+    $active = 'active';
+  }
+  ?>
+  <section id="cast-profile" class="cast">
     <div class="cast__name">
       <?= $user_name ?>
     </div>
     <div class="swiper__container">
-      <div id="single-cast-swiper" class="swiper single_cast">
-        <ul class="cast__img__list swiper-wrapper">
+      <div id="<?= $swiper_id ?>" class="swiper single_cast">
+        <ul class="cast__img__list swiper-wrapper <?= $active ?>">
           <?php foreach ($user_images as $index => $user_img) : ?>
             <li class="cast__img__item swiper-slide">
               <img src="<?= $user_img; ?>" alt="プロフィール画像 <?= $index + 1; ?>">
@@ -83,7 +92,7 @@ if ($user_display == 'show') {
         </p>
       </li>
     </ul>
-  </article>
+  </section>
 <?php endif; ?>
 
 <?php

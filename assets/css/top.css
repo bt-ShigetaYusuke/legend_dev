@@ -56,6 +56,13 @@
   margin: -2rem auto 0;
 }
 
+.cast__list.swiper-wrapper{
+  justify-content: center;
+}
+.cast__list.swiper-wrapper.active{
+  justify-content: start;
+}
+
 .cast__item.swiper-slide {
   transition-timing-function: linear;
   display: block;

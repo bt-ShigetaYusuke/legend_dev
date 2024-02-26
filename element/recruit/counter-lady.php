@@ -42,7 +42,7 @@ $items = range(1, 11);
     <li class="counterlady__workingstyle__item common__jobtype__workingstyle__item">
       <h3 class="counterlady__workingstyle__item__title common__jobtype__workingstyle__item__title">勤務時間</h3>
       <p class="counterlady__workingstyle__item__text common__jobtype__workingstyle__item__text">
-        <span class="--large">19時~24時</span>（金、土は若干延長）<br>
+        <span class="--large"><?= get_business_hours_range() ?></span>（金、土は若干延長）<br>
         週6でも週1でも月1でも何でもOK! 遅出勤で3時間だけとかでも<br>
         女の子の都合に合わせて働いていただけます。<br>
         ・体験入店や、店内見学、または面接だけでも歓迎です。<br>

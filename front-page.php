@@ -77,13 +77,19 @@ foreach ($users as $user) {
 
 // cast_displayがshowのユーザーが1件もヒットしなかった場合、castセクションごと非表示に
 if (!empty($display_users)) :
+  $swiper_id = '';
+  $active = '';
+  if (!(count($display_users) <= 3)) {
+    $swiper_id = 'top-cast-swiper';
+    $active = 'active';
+  }
 ?>
   <section id="cast" class="cast common__section">
     <h2 class="cast__title">
       <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_title.png" alt="キャスト" width="375" height="106" loading="lazy">
     </h2>
-    <div id="top-cast-swiper" class="top__cast__swiper swiper">
-      <ul class="cast__list swiper-wrapper">
+    <div id="<?= $swiper_id ?>" class="top__cast__swiper swiper">
+      <ul class="cast__list swiper-wrapper <?= $active ?>">
         <?php foreach ($display_users as $user) : ?>
           <li class="cast__item swiper-slide">
             <a href="<?= $user['link'] ?>">

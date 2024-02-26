@@ -48,7 +48,7 @@
   text-align: right;
 }
 
-/* #cast */
+/* #cast-profile */
 .cast {
   margin: 1rem auto 0;
 }
@@ -57,6 +57,14 @@
   font-size: 6rem;
   text-align: center;
 }
+
+.cast__img__list.swiper-wrapper{
+  justify-content: center;
+}
+.cast__img__list.swiper-wrapper.active{
+  justify-content: start;
+}
+
 
 .cast__list.grid__container {
   display: grid;
