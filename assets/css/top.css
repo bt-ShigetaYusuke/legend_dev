@@ -56,11 +56,14 @@
   margin: -2rem auto 0;
 }
 
-.cast__list.swiper-wrapper{
+.cast__list.swiper-wrapper:not(.active){
   justify-content: center;
+  gap: 20px;
+  width: 69rem;
+  margin: 0 auto;
 }
-.cast__list.swiper-wrapper.active{
-  justify-content: start;
+.cast__list.swiper-wrapper:not(.active) .cast__item{
+  flex: .5;
 }
 
 .cast__item.swiper-slide {
