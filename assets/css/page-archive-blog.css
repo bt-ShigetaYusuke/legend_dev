@@ -6,7 +6,7 @@
 
 .cast__blog__item__link {
   overflow: hidden;
-  height: 21.2rem;
+  height: 24.2rem;
   border-bottom: dotted 1px #fff;
   padding: 1.9rem 0;
 }
@@ -42,8 +42,15 @@
 
 .cast__blog__item__date,
 .cast__blog__item__author {
-  margin: 0.7rem 0 0;
   text-align: right;
+}
+
+.cast__blog__item__date {
+  margin: 0.7rem 0 0;
+}
+
+.cast__blog__item__author {
+  margin: 0;
 }
 
 .cast__blog__item__author small {
