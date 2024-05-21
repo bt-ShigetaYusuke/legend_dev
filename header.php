@@ -117,7 +117,7 @@
           <p class="header__nav__contact__info__item__text">
             <span class="large">
               <?= get_business_hours_range() ?>
-            </span>（日曜・年末年始休み）
+            </span>（年中無休）
           </p>
         </li>
         <li class="header__nav__contact__info__item">
