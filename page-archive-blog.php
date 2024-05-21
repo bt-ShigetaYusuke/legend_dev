@@ -54,8 +54,11 @@ $the_query = new WP_Query($args);
               <div class="cast__blog__item__content">
                 <?= $content ?>
               </div>
+              <p class="cast__blog__item__date">
+                <?= get_the_date('Y.m.d(D)') ?>
+              </p>
               <p class="cast__blog__item__author">
-                <?= $user_name ?>
+                <small>ビキニガールズバー&nbsp;レジェンド</small><?= $user_name ?>
               </p>
             </div>
           </a>
@@ -80,4 +83,4 @@ $the_query = new WP_Query($args);
   wp_reset_postdata();
   ?>
 
-<?php get_footer(); ?>
+  <?php get_footer(); ?>

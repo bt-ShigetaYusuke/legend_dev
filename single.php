@@ -21,8 +21,11 @@ $user_name = get_field('cast_name', 'user_' . $author_id);
         <p>
           <?php the_content(); ?>
         </p>
+        <p class="post__article__date">
+          <?= get_the_date('Y.m.d(D)') ?>
+        </p>
         <p class="post__article__author__name">
-          <?= $user_name ?>
+          <small>ビキニガールズバー&nbsp;レジェンド</small><?= $user_name ?>
         </p>
       <?php endwhile; ?>
     <?php else : ?>

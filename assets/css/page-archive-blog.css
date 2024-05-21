@@ -28,6 +28,10 @@
   font-size: 2.4rem;
 }
 
+.cast__blog__item__date {
+  font-size: 2rem;
+}
+
 .cast__blog__item__content {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -36,9 +40,15 @@
   margin: 0.5rem 0 0;
 }
 
+.cast__blog__item__date,
 .cast__blog__item__author {
   margin: 0.7rem 0 0;
   text-align: right;
+}
+
+.cast__blog__item__author small {
+  margin: 0 2rem 0 0;
+  font-size: 2rem;
 }
 
 .cast__blog__button {
