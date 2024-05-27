@@ -17,7 +17,7 @@ if (!empty($user_query->get_results())) {
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = array(
   'post_type' => 'post',
-  'posts_per_page' => 10,
+  'posts_per_page' => 20,
   'author__in' => $author_ids,
   'paged' => $paged,
 );

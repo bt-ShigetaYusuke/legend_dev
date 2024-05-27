@@ -11,7 +11,7 @@
   <?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
   <header id="header" class="header">
     <div class="header__list__container grid__container">
       <div id="header-hamburger" class="header__hamburger grid__item">

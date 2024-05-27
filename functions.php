@@ -112,6 +112,9 @@ function theme_enqueue_styles()
   if (is_page('manual-cast') || is_page('manual-post') || is_page('manual-admin')) {
     $styles['page-manual-style'] = get_template_directory_uri() . '/assets/css/page-manual.css';
   }
+  if (is_tag()) {
+    $styles['tag-style'] = get_template_directory_uri() . '/assets/css/tag.css';
+  }
 
   foreach ($styles as $id => $url) {
     wp_enqueue_style($id, $url);
@@ -134,6 +137,24 @@ add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
 function wpcf7_autop_return_false()
 {
   return false;
+}
+
+//bodyに付与するidをカスタマイズ
+function get_body_id()
+{
+  if (is_home() || is_front_page()) {
+    return 'home';
+  } elseif (is_single()) {
+    return 'post-';
+  } elseif (is_page()) {
+    return 'page-';
+  } elseif (is_category()) {
+    return 'category-';
+  } elseif (is_tag()) {
+    return 'tag-';
+  } else {
+    return 'generic';
+  }
 }
 
 // 管理画面カスタマイズ

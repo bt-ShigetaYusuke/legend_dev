@@ -264,6 +264,22 @@ if (!empty($author_ids)) :
       <h2 class="cast__blog__title">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_blog_title.png" alt="キャスト ブログ" width="375" height="106">
       </h2>
+      <?php
+      // すべてのタグを取得
+      $tags = get_tags();
+      ?>
+
+      <?php if ($tags) : ?>
+        <ul class="tag__list">
+          <?php foreach ($tags as $tag) : ?>
+            <li class="tag__list__item">
+              <a class="tag__list__item__link" href="<?php echo esc_url(get_tag_link($tag->term_id)); ?>">
+                <?php echo esc_html($tag->name); ?> (<?php echo $tag->count; ?>)
+              </a>
+            </li>
+          <?php endforeach; ?>
+        </ul>
+      <?php endif; ?>
       <ul class="cast__blog__list common__width">
         <?php while ($the_query->have_posts()) : $the_query->the_post();
           // 文字数制限
@@ -301,6 +317,9 @@ if (!empty($author_ids)) :
       </ul>
       <a href="<?= home_url('/archive-blog') ?>" class="cast__blog__button">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_blog_button.png" alt="もっと見る" width="375" height="375" loading="lazy">
+      </a>
+      <a href="<?= home_url('/archive-tag') ?>" class="cast__link common__width common__link">
+        <p class="cast__link__text">タグ一覧</p>
       </a>
     </section>
 <?php
