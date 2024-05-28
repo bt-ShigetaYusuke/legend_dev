@@ -1,3 +1,11 @@
+/* #common */
+.common__tag__list {
+  margin: 2rem auto 0;
+}
+.common__tag__list__item a {
+  font-size: 3rem;
+}
+
 /* #first-view */
 .firstview__text {
   margin: -2rem auto 0;
@@ -231,7 +239,7 @@
 
 /* #cast-blog */
 #cast-blog .cast__link {
-  margin: 0 auto;
+  margin: 2rem auto 0;
 }
 .cast__blog {
   margin: 3rem auto 0;
@@ -306,7 +314,7 @@
 }
 
 /* # tag-list */
-.tag__list {
+/* .tag__list {
   display: flex;
   gap: 4rem;
   overflow-x: scroll;
@@ -321,4 +329,4 @@
 
 .tag__list__item a {
   font-size: 3rem;
-}
+} */
