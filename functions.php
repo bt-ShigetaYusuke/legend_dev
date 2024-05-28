@@ -109,6 +109,9 @@ function theme_enqueue_styles()
   if (is_page('archive-cast')) {
     $styles['page-archive-cast-style'] = get_template_directory_uri() . '/assets/css/page-archive-cast.css';
   }
+  if (is_page('archive-tag')) {
+    $styles['page-archive-tag-style'] = get_template_directory_uri() . '/assets/css/page-archive-tag.css';
+  }
   if (is_page('manual-cast') || is_page('manual-post') || is_page('manual-admin')) {
     $styles['page-manual-style'] = get_template_directory_uri() . '/assets/css/page-manual.css';
   }
