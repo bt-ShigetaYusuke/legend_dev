@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main id="single">
+<main id="single" class="main">
 
   <?php
   $post_id = get_queried_object_id();

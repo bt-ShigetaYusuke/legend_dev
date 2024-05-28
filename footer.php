@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer id="footer" class="footer">
   <div class="footer__list__container flex__container">
     <ul class="footer__contact__list flex__item grid__container">
       <li class="footer__contact__item grid__item">
