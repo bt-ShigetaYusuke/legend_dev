@@ -64,7 +64,7 @@ if (!empty($author_ids)) :
                   <?= get_the_date('Y.m.d(D)') ?>
                 </p>
                 <p class="cast__blog__item__author">
-                  <small><?php single_tag_title(); ?></small><small>ビキニガールズバー&nbsp;レジェンド</small><?= $user_name ?>
+                  <small>ビキニガールズバー&nbsp;レジェンド</small><?= $user_name ?>
                 </p>
               </div>
             </a>

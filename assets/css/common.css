@@ -63,6 +63,19 @@ img {
   background: url(../img/feesystem_link_icon.png) no-repeat center / cover;
 }
 
+.common__tag__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+}
+
+.common__tag__list__item a {
+  padding: 1.4rem 1rem;
+  background-color: #fff;
+  color: #000;
+  line-height: 1;
+}
+
 /* #pagenation */
 .page-numbers {
   display: flex;

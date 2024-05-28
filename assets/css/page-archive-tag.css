@@ -4,17 +4,6 @@
   margin: 4rem auto 0;
 }
 
-.tag__list {
-  list-style: disc;
-  border: dotted #33bbff 1px;
-  padding: 0.5em 0.5em 0.5em 2em;
-}
-
-.tag__list__item {
-  line-height: 1.5;
-  padding: 0.5em 0;
-}
-
-#archive-tag .common__link p {
+#archive-tag .common__tag__list__item a {
   font-size: 3rem;
 }
