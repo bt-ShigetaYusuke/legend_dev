@@ -1,4 +1,14 @@
 /* page-archive-blog */
+/* common */
+#page-archive-blog .common__tag__list {
+  margin: 3rem auto 0;
+}
+
+#page-archive-blog .common__link {
+  margin: 2rem auto 0;
+  text-align: right;
+}
+
 /* #cast-blog */
 .cast__blog__list {
   margin: -5rem auto 0;
