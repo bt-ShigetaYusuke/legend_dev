@@ -68,6 +68,11 @@ $the_query = new WP_Query($args);
       <p>お探しの記事は見つかりませんでした。</p>
     </div>
   <?php endif; ?>
+
+  <?php include(get_template_directory() . '/element/tag-list.php'); ?>
+
+  <?php include(get_template_directory() . '/element/link-archive-tag.php'); ?>
+
   <?php
   $big = 999999999;
 

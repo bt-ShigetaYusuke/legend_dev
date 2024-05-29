@@ -75,6 +75,10 @@
         </ul>
       </section>
 
+      <?php include(get_template_directory() . '/element/tag-list.php'); ?>
+
+      <?php include(get_template_directory() . '/element/link-archive-tag.php'); ?>
+
   <?php
     endif;
     $big = 999999999;

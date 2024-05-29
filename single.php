@@ -24,7 +24,14 @@
             <?php the_content(); ?>
           </p>
           <ul class="common__tag__list">
-            <?php the_tags('<li class="common__tag__list__item">', '</li><li class="common__tag__list__item">', '</li>'); ?>
+            <?php
+            $tags = get_the_tags();
+            if ($tags) {
+              foreach ($tags as $tag) {
+                echo '<li class="common__tag__list__item"><a href="' . get_tag_link($tag->term_id) . '">#&nbsp;' . $tag->name . '</a></li>';
+              }
+            }
+            ?>
           </ul>
           <p class="post__article__date">
             <?= get_the_date('Y.m.d(D)') ?>
