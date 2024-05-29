@@ -1,3 +1,13 @@
+/* #common */
+#tag .common__tag__list {
+  margin: 3rem auto 0;
+}
+
+#tag .common__link {
+  margin: 2rem auto 0;
+  text-align: right;
+}
+
 /* #cast-blog */
 .cast__blog__list {
   margin: -5rem auto 0;
