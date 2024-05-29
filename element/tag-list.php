@@ -3,7 +3,6 @@
 $tags = get_tags(array(
   'orderby' => 'count',
   'order' => 'DESC',
-  'number' => 10  // 上位10件のみ取得
 ));
 ?>
 <?php if ($tags) : ?>

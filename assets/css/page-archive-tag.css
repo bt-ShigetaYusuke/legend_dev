@@ -1,9 +1,9 @@
-/* page-archive-tag */
-.archive__tag {
+#archive-tag {
   width: 69rem;
   margin: 4rem auto 0;
 }
 
-#archive-tag .common__tag__list__item a {
-  font-size: 3rem;
+#archive-tag .common__tag__list{
+  flex-wrap: wrap;
+  white-space: nowrap;
 }
