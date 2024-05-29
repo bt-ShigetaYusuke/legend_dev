@@ -1,5 +1,6 @@
 #single .common__tag__list {
-  margin: 3rem 0 1rem;
+  padding: 2rem 0;
+  margin: 3rem 0 0;
 }
 #single .common__tag__list__item a {
   font-size: 2.4rem;
