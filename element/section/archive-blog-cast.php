@@ -68,28 +68,11 @@ if (!empty($author_ids)) :
       <a href="<?= home_url('/archive-blog') ?>" class="cast__blog__button">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cast_blog_button.png" alt="もっと見る" width="375" height="375" loading="lazy">
       </a>
-      <?php
-      // すべてのタグを投稿数の多い順に取得し、上位10件のみ取得
-      $tags = get_tags(array(
-        'orderby' => 'count',
-        'order' => 'DESC',
-        'number' => 10  // 上位10件のみ取得
-      ));
-      ?>
-      <?php if ($tags) : ?>
-        <ul class="common__tag__list common__width">
-          <?php foreach ($tags as $tag) : ?>
-            <li class="common__tag__list__item">
-              <a href="<?php echo esc_url(get_tag_link($tag->term_id)); ?>">
-                <?php echo esc_html($tag->name); ?> (<?php echo $tag->count; ?>)
-              </a>
-            </li>
-          <?php endforeach; ?>
-        </ul>
-      <?php endif; ?>
-      <a href="<?= home_url('/archive-tag') ?>" class="cast__link common__width common__link">
-        <p class="cast__link__text">タグ一覧</p>
-      </a>
+
+      <?php include(get_template_directory() . '/element/tag-list.php'); ?>
+
+      <?php include(get_template_directory() . '/element/link-archive-tag.php'); ?>
+
     </section>
 <?php
   endif;

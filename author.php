@@ -97,7 +97,7 @@
     </section>
   <?php endif; ?>
 
-  <?php include('element/section/archive-blog-cast-author.php'); ?>
+  <?php include(get_template_directory() . '/element/section/archive-blog-cast-author.php'); ?>
 
 </main>
 
