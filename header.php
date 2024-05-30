@@ -13,6 +13,7 @@
 
 <body <?php body_class(); ?>>
   <header id="header" class="header">
+    <h1><?php wp_title(''); ?></h1>
     <div class="header__list__container grid__container">
       <div id="header-hamburger" class="header__hamburger grid__item">
         <span></span>
@@ -31,11 +32,11 @@
           </a>
         </li>
       </ul>
-      <h1 class="header__logo">
+      <div class="header__logo">
         <a href="<?= home_url() ?>" class="header__logo__link">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/header_logo.png" alt="Legend" width="129" height="36">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/header_logo.png" alt="LEGEND" width="129" height="36">
         </a>
-      </h1>
+      </div>
       <ul class="header__sns__list grid__item grid__container">
         <li class="header__sns__item">
           <a href="<?= get_sns_line_url() ?>" class="header__sns__item__link">
