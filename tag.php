@@ -17,7 +17,8 @@
   }
 
   $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-  $tag = single_tag_title('', false);
+  $tag = get_queried_object();
+  $tag_slug = $tag->slug;
 
   // cast_displayがshowのユーザーが1件もヒットしなかった場合、cast-blogセクションごと非表示に
   if (!empty($author_ids)) :
@@ -26,7 +27,7 @@
       'post_type' => 'post',
       'posts_per_page' => 20,
       'author__in' => $author_ids,
-      'tag' => $tag,
+      'tag' => $tag_slug,
       'paged' => $paged
     );
 
