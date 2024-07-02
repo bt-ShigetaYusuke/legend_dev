@@ -35,6 +35,22 @@ function add_meta_keywords()
 }
 add_action('wp_head', 'add_meta_keywords');
 
+// All in One SEOで投稿タイトルにカスタムフォーマットを追加
+function custom_aioseo_title_format($title) {
+  if (is_singular('post')) {
+      $post_date = get_the_date('Y.m.d');
+      $post_id = get_queried_object_id();
+      $post = get_post($post_id);
+      $author_id = $post->post_author;
+      $author_name = get_field('cast_name', 'user_' . $author_id);
+      $site_title = get_bloginfo('name');
+      // くるみ🍼出勤したよ！ (2024.06.18) | くるみのキャストブログ | ビキニガールズバー 東京府中 LEGEND (レジェンド)
+      $title = get_the_title() . ' (' . $post_date . ') | ' . $author_name . 'のキャストブログ | ' . $site_title;
+  }
+  return $title;
+}
+add_filter('aioseo_title', 'custom_aioseo_title_format');
+
 // アイキャッチ画像
 function setup_theme()
 {

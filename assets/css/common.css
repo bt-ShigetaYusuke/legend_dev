@@ -25,19 +25,8 @@ body {
   line-height: 1.5;
 }
 
-/* 
-スクリーンリーダー向けに非表示にする 
-スクリーンリーダには読み上げさせたいが、視覚的には非表示にする
-*/
 h1 {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
+  display: none;
 }
 
 a {
