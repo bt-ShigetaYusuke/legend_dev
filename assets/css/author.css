@@ -129,6 +129,10 @@
 }
 
 .cast__blog__item__title {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   color: #33bbff;
   font-weight: bold;
   font-size: 3rem;
@@ -148,6 +152,10 @@
 }
 
 .cast__blog__item__author {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   margin: 0.7rem 0 0;
   text-align: right;
 }

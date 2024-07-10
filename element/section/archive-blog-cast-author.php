@@ -21,9 +21,10 @@ $the_query = new WP_Query($args);
       <?php while ($the_query->have_posts()) : $the_query->the_post();
         // 文字数制限
         $title = get_the_title();
-        $title = wp_trim_words(get_the_title(), 18, '…');
+        $title = wp_trim_words(get_the_title(), 16, '…');
         $content = get_the_content('', false, '');
         $content = wp_strip_all_tags($content);
+        $content = wp_trim_words($content, 42, '…');
         $cast_name = get_field('cast_name', 'user_' . $author_id);
       ?>
         <li class="cast__blog__item">
