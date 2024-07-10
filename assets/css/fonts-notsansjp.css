@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url('../webfonts/NotoSansJP-Regular.woff2') format('woff2'),
+    url('../webfonts/NotoSansJP-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url('../webfonts/NotoSansJP-Bold.woff2') format('woff2'),
+    url('../webfonts/NotoSansJP-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+}

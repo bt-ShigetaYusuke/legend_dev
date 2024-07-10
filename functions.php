@@ -97,7 +97,7 @@ add_filter('wp_resource_hints', 'theme_resource_hints', 10, 2);
 function theme_enqueue_styles()
 {
   $styles = array(
-    'google-fonts' => 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400..700&display=swap',
+    'googleFonts' => get_template_directory_uri() . '/assets/css/fonts-notsansjp.css',
     'font-awesome' => get_template_directory_uri() . '/assets/css/all.min.css',
     'swiper-min' => get_template_directory_uri() . '/assets/css/swiper.min.css',
     'theme-reset' => get_template_directory_uri() . '/assets/css/reset.css',
