@@ -24,6 +24,7 @@ table {
 th,
 td {
   vertical-align: top;
+  padding: .2rem 0;
 }
 
 th{
@@ -32,6 +33,11 @@ th{
 
 td p{
   padding: 2rem 0 2rem;
+}
+
+th:last-child,
+td:last-child {
+  text-align: right;
 }
 
 /* #menu__nav */
@@ -47,8 +53,7 @@ td p{
   width: 18rem;
 }
 
-.special__menu th:first-child,
-.special__menu td:first-child{
+.table:not(.table-champagne, .table-wine) th:first-child,
+.table:not(.table-champagne, .table-wine) td:first-child {
   width: 56rem;
 }
-
