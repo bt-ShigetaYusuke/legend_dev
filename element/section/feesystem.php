@@ -22,7 +22,7 @@
       </tr>
       <tr class="feesystem__table__tr">
         <td class="feesystem__table__td__01">延長30分</td>
-        <td class="feesystem__table__td__02">¥3,000</td>
+        <td class="feesystem__table__td__02">¥3,500</td>
       </tr>
       <tr class="feesystem__table__tr">
         <td class="feesystem__table__td__01">延長60分</td>
