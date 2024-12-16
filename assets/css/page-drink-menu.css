@@ -10,7 +10,7 @@ h3 {
   border-radius: 8px;
   font-size: 3.2rem;
   padding: 1rem 2rem;
-  margin: 0 0 2rem;
+  margin: 0 0 3.5rem;
 }
 
 p,
@@ -23,7 +23,7 @@ table {
   width: 100%;
 }
 
-table:nth-child(n + 2) {
+table:nth-of-type(n + 2) {
   margin: 5rem 0 0;
 }
 
@@ -74,6 +74,6 @@ td p {
   margin: 4rem 0 0;
 }
 
-.special__menu__text:nth-of-type(n+2) {
+.special__menu__text:nth-of-type(n + 2) {
   margin: 1rem 0 0;
 }
