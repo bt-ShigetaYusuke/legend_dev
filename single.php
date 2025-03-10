@@ -7,6 +7,7 @@
   $post = get_post($post_id);
   $author_id = $post->post_author;
   $user_name = get_field('cast_name', 'user_' . $author_id);
+  $cast_display = get_field('cast_display', 'user_' . $author_id);
   ?>
   <section class="post common__width">
     <article class="post__article">
@@ -51,10 +52,12 @@
   <?php
   $post_link = get_author_posts_url($author_id);
   ?>
-  <a href="<?php echo $post_link; ?>" class="common__link common__width">
-    <p class=""><?= $user_name ?>のプロフィールを見る</p>
-  </a>
 
+  <?php if ($cast_display == 'show') : ?>
+    <a href="<?php echo $post_link; ?>" class="common__link common__width">
+      <p class=""><?= $user_name ?>のプロフィールを見る</p>
+    </a>
+  <?php endif; ?>
   <?php wp_reset_postdata(); ?>
 
 </main>
