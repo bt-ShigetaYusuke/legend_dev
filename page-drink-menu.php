@@ -61,7 +61,7 @@
         </tr>
         <tr>
           <td>UN</td>
-          <td>BRUUT / SWEET-ROSE</td>
+          <td>BRUT / SWEET-ROSE</td>
           <td>¥20,000</td>
         </tr>
         <tr>
@@ -85,7 +85,7 @@
           <td>¥100,000</td>
         </tr>
         <tr>
-          <td>Veuve Clicquot</td>
+          <td></td>
           <td>BELLE EPOQUE ROSE</td>
           <td>¥200,000</td>
         </tr>
@@ -167,7 +167,7 @@
         </tr>
         <tr>
           <td>チーズ＆サラミ</td>
-          <td>¥2,000</td>
+          <td>¥3,000</td>
         </tr>
       </tbody>
     </table>
