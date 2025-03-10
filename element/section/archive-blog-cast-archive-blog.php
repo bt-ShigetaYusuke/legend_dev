@@ -1,7 +1,7 @@
 <?php
 // #cast-blog
 $user_query = new WP_User_Query(array(
-  'meta_key' => 'cast_display',
+  'meta_key' => 'cast_blog_display',
   'meta_value' => 'show'
 ));
 

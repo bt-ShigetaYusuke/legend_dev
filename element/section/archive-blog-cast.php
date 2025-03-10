@@ -1,7 +1,7 @@
 <?php
 // #cast-blog
 $user_query = new WP_User_Query(array(
-  'meta_key' => 'cast_display',
+  'meta_key' => 'cast_blog_display',
   'meta_value' => 'show'
 ));
 
@@ -12,7 +12,7 @@ if (!empty($user_query->get_results())) {
   }
 }
 
-// cast_displayがshowのユーザーが1件もヒットしなかった場合、cast-blogセクションごと非表示に
+// cast_blog_displayがshowのユーザーが1件もヒットしなかった場合、cast-blogセクションごと非表示に
 if (!empty($author_ids)) :
 
   $args = array(

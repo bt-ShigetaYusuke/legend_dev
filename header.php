@@ -60,9 +60,9 @@
 
     <?php
     # header-nav
-    // cast_displayがshowのユーザーが一件もヒットしない場合、メニューから「キャスト」と「キャストブログ」を非表示に
+    // cast_blog_displayがshowのユーザーが一件もヒットしない場合、メニューから「キャスト」と「キャストブログ」を非表示に
     $user_query = new WP_User_Query(array(
-      'meta_key' => 'cast_display',
+      'meta_key' => 'cast_blog_display',
       'meta_value' => 'show'
     ));
 
